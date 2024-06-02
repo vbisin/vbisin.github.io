@@ -1,1 +1,3 @@
-chatgpt created website to create a static website
+ChatGPT (or was it Claude) code to create a static website. 
+Idea from: https://andreischeinkman.com/
+
