@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel - Vittorio Bisin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #E6E6FA;
+            color: #333333;
+        }
+        .image-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8f8ff;
+        }
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+        .home-link {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: white;
+            border-radius: 20px;
+            text-decoration: none;
+            color: #333;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .home-link:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="home-link">← Home</a>
+    <div class="max-w-6xl mx-auto p-8 bg-purple-50">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">Travel</h1>
+        </div>
+
+        <!-- Italy Section -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6">Italy</h2>
+            
+            <!-- Bologna -->
+            <div class="mb-12">
+                <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Bologna</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                        <div class="image-container h-[500px]">
+                            <img src="./images/italy/bologna/towers.jpg" alt="Bologna towers" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Genova -->
+            <div class="mb-12">
+                <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Genova</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                        <div class="image-container h-[500px]">
+                            <img src="./images/italy/genova/city.jpg" alt="Genova city view" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grosseto -->
+            <div class="mb-12">
+                <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Grosseto</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                        <div class="image-container h-[500px]">
+                            <img src="./images/italy/grosseto/thermal.jpg" alt="Thermal baths" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Milan -->
+            <div class="mb-12">
+                <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Milan</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                        <div class="image-container h-[500px]">
+                            <img src="./images/italy/milan/city.jpg" alt="Milan city view" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rome -->
+            <div class="mb-12">
+                <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Rome</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                        <div class="image-container h-[500px]">
+                            <img src="./images/italy/rome/forum.jpg" alt="Roman Forum" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                        <div class="image-container h-[240px]">
+                            <img src="./images/italy/rome/betta_fireworks.jpg" alt="Betta fireworks" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                        <div class="image-container h-[240px]">
+                            <img src="./images/italy/rome/new_years.jpg" alt="New Years" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Val di Noto -->
+            <div class="mb-12">
+                <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Val di Noto</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                        <div class="image-container h-[500px]">
+                            <img src="./images/italy/val-di-noto/cathedral.jpg" alt="Cathedral" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                        <div class="image-container h-[240px]">
+                            <img src="./images/italy/val-di-noto/etna.jpg" alt="Mount Etna" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                        <div class="image-container h-[240px]">
+                            <img src="./images/italy/val-di-noto/marzamemi.jpg" alt="Marzamemi" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                        <div class="image-container h-[240px]">
+                            <img src="./images/italy/val-di-noto/plaza.jpg" alt="Plaza" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                        <div class="image-container h-[240px]">
+                            <img src="./images/italy/val-di-noto/steps.jpg" alt="Steps" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Venice -->
+            <div class="mb-12">
+                <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Venice</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                        <div class="image-container h-[500px]">
+                            <img src="./images/italy/venice/university.jpg" alt="University" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Verona -->
+            <div class="mb-12">
+                <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Verona</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                        <div class="image-container h-[240px]">
+                            <img src="./images/italy/verona/street.jpg" alt="Street view" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- USA Section -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6">USA</h2>
+            
+            <!-- Shenandoah -->
+            <div class="mb-12">
+                <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Shenandoah</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                        <div class="image-container h-[500px]">
+                            <img src="./images/usa/shenandoah/cattle.jpg" alt="Cattle" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                        <div class="image-container h-[240px]">
+                            <img src="./images/usa/shenandoah/campfire.jpg" alt="Campfire" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                        <div class="image-container h-[240px]">
+                            <img src="./images/usa/shenandoah/landscape.jpg" alt="Landscape" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
