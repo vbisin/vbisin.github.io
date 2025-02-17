@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vittorio Bisin</title>
+    <style>
+        /* Existing styles */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #E6E6FA;
+            color: #333333;
+        }
+
+        /* Travel section specific styles */
+        .travel-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .country-section {
+            margin-bottom: 4rem;
+        }
+
+        .country-header {
+            font-size: 1.8rem;
+            color: #444;
+            margin-bottom: 2rem;
+            padding-left: 1rem;
+            border-left: 4px solid #9f7aea;
+        }
+
+        .city-section {
+            margin-bottom: 3rem;
+        }
+
+        .city-header {
+            font-size: 1.4rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            padding-left: 0.5rem;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .photo-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-item:hover {
+            transform: scale(1.02);
+        }
+
+        .photo-item.large {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .photo-item.medium {
+            grid-row: span 2;
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .photo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .photo-item.large,
+            .photo-item.medium {
+                grid-column: auto;
+                grid-row: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="travel-section">
+        <div class="section-header">
+            <h1>Travel & Adventures</h1>
+            <p>Exploring the world, one city at a time</p>
+        </div>
+
+        <!-- Italy Section -->
+        <div class="country-section">
+            <h2 class="country-header">Italy</h2>
+            
+            <!-- Val di Noto -->
+            <div class="city-section">
+                <h3 class="city-header">Val di Noto</h3>
+                <div class="photo-grid">
+                    <div class="photo-item large">
+                        <img src="italy/val-di-noto/cathedral.jpg" alt="Baroque cathedral with steps">
+                    </div>
+                    <div class="photo-item medium">
+                        <img src="italy/val-di-noto/steps.jpg" alt="Cathedral steps view">
+                    </div>
+                    <div class="photo-item">
+                        <img src="italy/val-di-noto/etna.jpg" alt="Mount Etna view">
+                    </div>
+                    <div class="photo-item">
+                        <img src="italy/val-di-noto/marzamemi.jpg" alt="Marzamemi village">
+                    </div>
+                    <div class="photo-item medium">
+                        <img src="italy/val-di-noto/plaza.jpg" alt="City plaza">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rome -->
+            <div class="city-section">
+                <h3 class="city-header">Rome</h3>
+                <div class="photo-grid">
+                    <div class="photo-item large">
+                        <img src="italy/rome/forum.jpg" alt="Roman Forum panorama">
+                    </div>
+                    <div class="photo-item medium">
+                        <img src="italy/rome/betta_fireworks.jpg" alt="New Year's fireworks">
+                    </div>
+                    <div class="photo-item">
+                        <img src="italy/rome/new_years.jpg" alt="New Year's celebration">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Italian Cities -->
+            <div class="photo-grid">
+                <div class="photo-item medium">
+                    <img src="italy/bologna/towers.jpg" alt="Bologna towers at night">
+                </div>
+                <div class="photo-item">
+                    <img src="italy/milan/city.jpg" alt="Milan city view">
+                </div>
+                <div class="photo-item">
+                    <img src="italy/verona/street.jpg" alt="Verona street scene">
+                </div>
+                <div class="photo-item">
+                    <img src="italy/genova/city.jpg" alt="Genova city view">
+                </div>
+                <div class="photo-item">
+                    <img src="italy/grosseto/thermal.jpg" alt="Thermal baths">
+                </div>
+            </div>
+        </div>
+
+        <!-- USA Section -->
+        <div class="country-section">
+            <h2 class="country-header">USA</h2>
+            
+            <!-- Shenandoah -->
+            <div class="city-section">
+                <h3 class="city-header">Shenandoah National Park</h3>
+                <div class="photo-grid">
+                    <div class="photo-item large">
+                        <img src="usa/shenandoah/cattle.jpg" alt="Cattle grazing in Shenandoah National Park">
+                    </div>
+                    <div class="photo-item medium">
+                        <img src="usa/shenandoah/campfire.jpg" alt="Evening campfire with friends">
+                    </div>
+                    <div class="photo-item">
+                        <img src="usa/shenandoah/landscape.jpg" alt="Mountain landscape view">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
