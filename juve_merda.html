@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juve appreciation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #E6E6FA;
+            color: #333333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 1em;
+            color: #333333;
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 1.2em;
+            color: #444444;
+            font-size: 1.1em;
+            text-align: center;
+        }
+        .nav-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5em 1em;
+            color: #666666;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-radius: 20px;
+            background-color: white;
+        }
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .photo-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        .photo-item img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-height: 800px;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="nav-link">← Home</a>
+    
+    <div class="container">
+        <h1>Around NYC</h1>
+        <p>and maybe one day around the world</p>
+
+        <!-- Spotify Embed -->
+        <div class="spotify-player">
+            <iframe 
+                src="https://open.spotify.com/embed/track/0lgjzzt9JcbUFIaRvj8Uhq" 
+                width="100%" 
+                height="80" 
+                frameborder="0" 
+                allowtransparency="true" 
+                allow="encrypted-media"
+                style="border-radius: 10px; margin: 20px 0;">
+            </iframe>
+            <p style="text-align: center; font-size: 0.9em; margin: 0 0 40px 0;">
+                <a href="https://www.youtube.com/watch?v=6qvTvaKejC0&ab_channel=SimoneGrupillo" 
+                   target="_blank"
+                   style="color: #666666; text-decoration: none; font-weight: bold;">
+                   Click here for the (low quality) video
+                </a>
+            </p>
+        </div>
+
+        <div class="photo-grid">
+            <div class="photo-item">
+                <img src="./images/juventus/giraffe.jpg" alt="Giraffe">
+            </div>
+            <div class="photo-item">
+                <img src="./images/juventus/brooklyn.jpg" alt="Brooklyn">
+            </div>
+            <div class="photo-item">
+                <img src="./images/juventus/hims.jpg" alt="Hims">
+            </div>
+            <div class="photo-item">
+                <img src="./images/juventus/subway.jpg" alt="Subway">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

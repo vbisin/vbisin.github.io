@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Vittorio Bisin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #E6E6FA;
+            color: #333333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 1em;
+            color: #333333;
+        }
+        .about-section p {
+            line-height: 1.6;
+            margin-bottom: 1.2em;
+            color: #444444;
+            font-size: 1.1em;
+            text-align: center;
+        }
+        .nav-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5em 1em;
+            color: #666666;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-radius: 20px;
+            background-color: white;
+        }
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .profile-image {
+            display: block;
+            margin: 20px auto;
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="nav-link">← Home</a>
+    
+    <div class="container">
+        <h1>About</h1>
+        
+        <img src="vittorio_verona.jpg" alt="Vittorio in Verona" class="profile-image">
+        
+        <div class="about-section">
+            <p>I live in New York and work at a quantitative hedge fund. </p>
+            
+            <p> I wrote this as a side-project while on garden leave and hope to maintain it</p>
+        </div>
+    </div>
+</body>
+</html>
