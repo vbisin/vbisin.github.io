@@ -43,6 +43,56 @@
             transform: translateY(-2px);
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.querySelector('.max-w-6xl');
+            
+            // Sort year sections
+            const yearSections = Array.from(container.querySelectorAll('.mb-20')).filter(section => 
+                section.querySelector('h2').textContent.match(/\d{4}/)
+            );
+            
+            // Sort by year descending
+            yearSections.sort((a, b) => {
+                const yearA = parseInt(a.querySelector('h2').textContent);
+                const yearB = parseInt(b.querySelector('h2').textContent);
+                return yearB - yearA;
+            });
+            
+            // Within each year, sort countries
+            yearSections.forEach(yearSection => {
+                const countrySections = Array.from(yearSection.querySelectorAll('.mb-16'));
+                
+                // Sort countries alphabetically ascending (A to Z)
+                countrySections.sort((a, b) => {
+                    const countryA = a.querySelector('h2').textContent.trim();
+                    const countryB = b.querySelector('h2').textContent.trim();
+                    return countryA.localeCompare(countryB);
+                });
+                
+                // Within each country, sort cities
+                countrySections.forEach(countrySection => {
+                    const citySections = Array.from(countrySection.querySelectorAll('.mb-12'));
+                    
+                    // Sort cities alphabetically ascending (A to Z)
+                    citySections.sort((a, b) => {
+                        const cityA = a.querySelector('h3').textContent.trim();
+                        const cityB = b.querySelector('h3').textContent.trim();
+                        return cityA.localeCompare(cityB);
+                    });
+                    
+                    // Reorder cities in the DOM
+                    citySections.forEach(section => countrySection.appendChild(section));
+                });
+                
+                // Reorder countries in the DOM
+                countrySections.forEach(section => yearSection.appendChild(section));
+            });
+            
+            // Reorder years in the DOM
+            yearSections.forEach(section => container.appendChild(section));
+        });
+    </script>
 </head>
 <body>
     <a href="index.html" class="home-link">← Home</a>
@@ -118,7 +168,7 @@
                 </div>
             </div>
 
-            <!-- Italy Section -->
+            <!-- Italy Section 2024 -->
             <div class="mb-16">
                 <h2 class="text-2xl font-semibold text-gray-800 mb-6">Italy</h2>
                 
@@ -129,23 +179,6 @@
                         <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
                             <div class="image-container h-[450px]">
                                 <img src="./images/2024/italy/bologna/towers.jpg" alt="Bologna towers" loading="lazy">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bolzano -->
-                <div class="mb-12">
-                    <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Bolzano</h3>
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                        <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
-                            <div class="image-container h-[450px]">
-                                <img src="./images/2024/italy/bolzano/betta_ferrata.jpg" alt="Betta on ferrata" loading="lazy">
-                            </div>
-                        </div>
-                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
-                            <div class="image-container h-[365px]">
-                                <img src="./images/2024/italy/bolzano/betta_view.jpg" alt="Betta mountain view" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -163,28 +196,6 @@
                         <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
                             <div class="image-container h-[365px]">
                                 <img src="./images/2024/italy/costiera_amalfitana/positano.jpg" alt="Positano view" loading="lazy">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Genova -->
-                <div class="mb-12">
-                    <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Genova</h3>
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                        <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
-                            <div class="image-container h-[450px]">
-                                <img src="./images/2024/italy/genova/city.jpg" alt="Genova city view" loading="lazy">
-                            </div>
-                        </div>
-                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
-                            <div class="image-container h-[365px]">
-                                <img src="./images/2024/italy/genova/melanie.jpg" alt="Melanie" loading="lazy">
-                            </div>
-                        </div>
-                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
-                            <div class="image-container h-[365px]">
-                                <img src="./images/2024/italy/genova/panzerina.jpg" alt="Panzerina" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -256,25 +267,30 @@
                 <!-- Val di Noto -->
                 <div class="mb-12">
                     <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Val di Noto</h3>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="col-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
-                            <div class="image-container h-[450px]">
-                                <img src="./images/2024/italy/val_di_noto/steps.jpg" alt="Steps" loading="lazy">
-                            </div>
-                        </div>
-                        <div class="col-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
                             <div class="image-container h-[450px]">
                                 <img src="./images/2024/italy/val_di_noto/cathedral.jpg" alt="Cathedral" loading="lazy">
                             </div>
                         </div>
-                        <div class="col-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
-                            <div class="image-container h-[450px]">
+                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[365px]">
                                 <img src="./images/2024/italy/val_di_noto/etna.jpg" alt="Mount Etna" loading="lazy">
                             </div>
                         </div>
-                        <div class="col-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
-                            <div class="image-container h-[450px]">
+                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[365px]">
                                 <img src="./images/2024/italy/val_di_noto/marzamemi.jpg" alt="Marzamemi" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[365px]">
+                                <img src="./images/2024/italy/val_di_noto/plaza.jpg" alt="Plaza" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[365px]">
+                                <img src="./images/2024/italy/val_di_noto/steps.jpg" alt="Steps" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -283,9 +299,9 @@
                 <!-- Venice -->
                 <div class="mb-12">
                     <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Venice</h3>
-                    <div class="grid grid-cols-1 gap-4">
-                        <div class="overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
-                            <div class="image-container h-[600px]">
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[450px]">
                                 <img src="./images/2024/italy/venice/university.jpg" alt="University" loading="lazy">
                             </div>
                         </div>
@@ -296,9 +312,36 @@
                 <div class="mb-12">
                     <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Verona</h3>
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[450px]">
+                                <img src="./images/2024/italy/verona/street.jpg" alt="Street view" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Genova -->
+                <div class="mb-12">
+                    <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Genova</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[450px]">
+                                <img src="./images/2024/italy/genova/city.jpg" alt="Genova City View" loading="lazy">
+                            </div>
+                        </div>
                         <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
                             <div class="image-container h-[365px]">
-                                <img src="./images/2024/italy/verona/street.jpg" alt="Street view" loading="lazy">
+                                <img src="./images/2024/italy/genova/panzerina.jpg" alt="Panzerina" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[365px]">
+                                <img src="./images/2024/italy/genova/panzerina_giorno_1.jpg" alt="Panzerina Day 1" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[365px]">
+                                <img src="./images/2024/italy/genova/melanie.jpg" alt="Melanie" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -427,6 +470,11 @@
                                 <img src="./images/2024/usa/new_york/betta_arianna.jpg" alt="Betta and Arianna" loading="lazy">
                             </div>
                         </div>
+                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[365px]">
+                                <img src="./images/2024/usa/new_york/betta_birthday.jpg" alt="Betta Birthday" loading="lazy">
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -481,6 +529,413 @@
                         <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
                             <div class="image-container h-[365px]">
                                 <img src="./images/2024/usa/yosemite/IMG_9946.jpg" alt="Yosemite Landscape" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Steamboat -->
+                <div class="mb-12">
+                    <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Steamboat</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[450px]">
+                                <img src="./images/2024/usa/steamboat/steamboat.jpg" alt="Steamboat" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[365px]">
+                                <img src="./images/2024/usa/steamboat/steamboat_night.jpg" alt="Steamboat at Night" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2023 Section -->
+        <div class="mb-20">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8">2023</h2>
+
+            <!-- Greece Section -->
+            <div class="mb-16">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6">Greece</h2>
+                
+                <!-- Athens -->
+                <div class="mb-12">
+                    <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Athens</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[450px]">
+                                <img src="./images/2023/greece/athens/athens_marathon.jpg" alt="Athens Marathon" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[365px]">
+                                <img src="./images/2023/greece/athens/betta_parthenon.jpg" alt="Betta at Parthenon" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[365px]">
+                                <img src="./images/2023/greece/athens/dimitri_athens.jpg" alt="Dimitri in Athens" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Limeni -->
+                <div class="mb-12">
+                    <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Limeni</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[450px]">
+                                <img src="./images/2023/greece/limeni/beach.jpg" alt="Limeni Beach" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Santorini -->
+                <div class="mb-12">
+                    <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Santorini</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[450px]">
+                                <img src="./images/2023/greece/santorini/san_torini.jpg" alt="Santorini View" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ireland Section -->
+            <div class="mb-16">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6">Ireland</h2>
+                
+                <!-- Galway -->
+                <div class="mb-12">
+                    <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Galway</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[450px]">
+                                <img src="./images/2023/ireland/galway/bike.jpg" alt="Bike in Galway" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[365px]">
+                                <img src="./images/2023/ireland/galway/cows.jpg" alt="Cows" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[365px]">
+                                <img src="./images/2023/ireland/galway/kepos.jpg" alt="Kepos" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Israel Section -->
+            <div class="mb-16">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6">Israel</h2>
+                
+                <!-- Jerusalem -->
+                <div class="mb-12">
+                    <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Jerusalem</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[450px]">
+                                <img src="./images/2023/israel/jerusalem/crowd.jpg" alt="Jerusalem Crowd" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[365px]">
+                                <img src="./images/2023/israel/jerusalem/jerusalem_crowd_friend.jpg" alt="Jerusalem Crowd Friend" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[365px]">
+                                <img src="./images/2023/israel/jerusalem/iraselis.jpg" alt="Iraselis" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[365px]">
+                                <img src="./images/2023/israel/jerusalem/west.jpg" alt="Western Wall" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jordan Section -->
+            <div class="mb-16">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6">Jordan</h2>
+                
+                <!-- Jerash -->
+                <div class="mb-12">
+                    <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Jerash</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[450px]">
+                                <img src="./images/2023/jordan/jerash/jerash.jpg" alt="Jerash" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[365px]">
+                                <img src="./images/2023/jordan/jerash/jerash_view.jpg" alt="Jerash View" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Petra -->
+                <div class="mb-12">
+                    <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Petra</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[450px]">
+                                <img src="./images/2023/jordan/petra/petra.jpg" alt="Petra" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[365px]">
+                                <img src="./images/2023/jordan/petra/petra_entrance.jpg" alt="Petra Entrance" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wadi Rum -->
+                <div class="mb-12">
+                    <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Wadi Rum</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[450px]">
+                                <img src="./images/2023/jordan/wadi_rum/desert_view.jpg" alt="Desert View" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[365px]">
+                                <img src="./images/2023/jordan/wadi_rum/selfie.jpg" alt="Selfie" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Palestine Section -->
+            <div class="mb-16">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6">Palestine</h2>
+                
+                <!-- Bethlehem -->
+                <div class="mb-12">
+                    <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Bethlehem</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[365px]">
+                                <img src="./images/2023/palestine/bethlehem/IMG_3166.jpg" alt="Bethlehem Scene" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[365px]">
+                                <img src="./images/2023/palestine/bethlehem/IMG_3181.jpg" alt="Bethlehem View" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Switzerland Section -->
+            <div class="mb-16">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6">Switzerland</h2>
+                
+                <!-- Zermatt -->
+                <div class="mb-12">
+                    <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Zermatt</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[450px]">
+                                <img src="./images/2023/switzerland/zermatt/zermatt.jpg" alt="Zermatt" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[365px]">
+                                <img src="./images/2023/switzerland/zermatt/zermatt_betta.jpg" alt="Zermatt Betta" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- USA Section -->
+            <div class="mb-16">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6">USA</h2>
+                
+                <!-- Glimmerglass -->
+                <div class="mb-12">
+                    <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Glimmerglass</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[450px]">
+                                <img src="./images/2023/usa/glimmerglass/camping.jpg" alt="Camping" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- New York -->
+                <div class="mb-12">
+                    <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">New York</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[450px]">
+                                <img src="./images/2023/usa/new_york/betta_painting.jpg" alt="Betta Painting" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[365px]">
+                                <img src="./images/2023/usa/new_york/cappa.jpg" alt="Cappa" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[365px]">
+                                <img src="./images/2023/usa/new_york/inter_club.jpg" alt="Inter Club" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vail -->
+                <div class="mb-12">
+                    <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Vail</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[450px]">
+                                <img src="./images/2023/usa/vail/vail_brooks.jpg" alt="Vail Brooks" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[365px]">
+                                <img src="./images/2023/usa/vail/vail_view.jpg" alt="Vail View" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Italy Section 2023 -->
+            <div class="mb-16">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6">Italy</h2>
+                
+                <!-- Aosta -->
+                <div class="mb-12">
+                    <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Aosta</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[450px]">
+                                <img src="./images/2023/italy/aosta/aosta_ferrata.jpg" alt="Aosta Ferrata" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[365px]">
+                                <img src="./images/2023/italy/aosta/aosta_ferrata_vitto.jpg" alt="Aosta Ferrata Vitto" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bolzano -->
+                <div class="mb-12">
+                    <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Bolzano</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[450px]">
+                                <img src="./images/2023/italy/bolzano/dolomiti.jpg" alt="Dolomiti" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[365px]">
+                                <img src="./images/2023/italy/bolzano/dolomiti_view.jpg" alt="Dolomiti View" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[365px]">
+                                <img src="./images/2023/italy/bolzano/dolomiti_betta_first.jpg" alt="Dolomiti Betta First" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[365px]">
+                                <img src="./images/2023/italy/bolzano/piscadu.jpg" alt="Piscadu" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ferrara -->
+                <div class="mb-12">
+                    <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Ferrara</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[450px]">
+                                <img src="./images/2023/italy/ferrara/ferrara.jpg" alt="Ferrara" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Genova -->
+                <div class="mb-12">
+                    <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Genova</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[450px]">
+                                <img src="./images/2023/italy/genova/fruttuoso.jpg" alt="Fruttuoso" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[365px]">
+                                <img src="./images/2023/italy/genova/melanie_smile.jpg" alt="Melanie Smile" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Livorno -->
+                <div class="mb-12">
+                    <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Livorno</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[450px]">
+                                <img src="./images/2023/italy/livorno/piombino.jpg" alt="Piombino" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ravenna -->
+                <div class="mb-12">
+                    <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Ravenna</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[450px]">
+                                <img src="./images/2023/italy/ravenna/ravenna_betta.jpg" alt="Ravenna Betta" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Verona -->
+                <div class="mb-12">
+                    <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">Verona</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[450px]">
+                                <img src="./images/2023/italy/verona/verona.jpg" alt="Verona" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="col-span-1 row-span-1 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                            <div class="image-container h-[365px]">
+                                <img src="./images/2023/italy/verona/verona_vitto.jpg" alt="Verona Vitto" loading="lazy">
                             </div>
                         </div>
                     </div>
