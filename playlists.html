@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annual Playlists - Vittorio Bisin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #E6E6FA;
+            color: #333333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 1em;
+            color: #333333;
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 1.2em;
+            color: #444444;
+            font-size: 1.1em;
+            text-align: center;
+        }
+        .nav-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5em 1em;
+            color: #666666;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-radius: 20px;
+            background-color: white;
+        }
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .year-section {
+            margin-bottom: 40px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .year-section:hover {
+            transform: translateY(-5px);
+        }
+        .year-title {
+            font-size: 1.5em;
+            color: #333333;
+            margin-bottom: 15px;
+            font-weight: bold;
+            border-bottom: 2px solid #E6E6FA;
+            padding-bottom: 8px;
+        }
+        .playlist-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .playlist-item {
+            margin-bottom: 10px;
+        }
+        .spotify-player {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        iframe {
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            .year-section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="nav-link">← Home</a>
+    
+    <div class="container">
+        <h1>Annual Playlists</h1>
+        <p>For my dad's birthday I make playlists with new and interesting music from that year</p>
+
+        <!-- 2024 Section -->
+        <div class="year-section">
+            <h2 class="year-title">2024</h2>
+            <div class="playlist-container">
+                <div class="playlist-item">
+                    <div class="spotify-player">
+                        <iframe 
+                            src="https://open.spotify.com/embed/playlist/1eOv1SoYghQEbBwvtqBQCz" 
+                            width="100%" 
+                            height="380" 
+                            frameborder="0" 
+                            allowtransparency="true" 
+                            allow="encrypted-media">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2023 Section -->
+        <div class="year-section">
+            <h2 class="year-title">2023</h2>
+            <div class="playlist-container">
+                <div class="playlist-item">
+                    <div class="spotify-player">
+                        <iframe 
+                            src="https://open.spotify.com/embed/playlist/7Ei0NOOorrqr4BStkuSsp5" 
+                            width="100%" 
+                            height="380" 
+                            frameborder="0" 
+                            allowtransparency="true" 
+                            allow="encrypted-media">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2022 Section -->
+        <div class="year-section">
+            <h2 class="year-title">2022</h2>
+            <div class="playlist-container">
+                <div class="playlist-item">
+                    <div class="spotify-player">
+                        <iframe 
+                            src="https://open.spotify.com/embed/playlist/4o3eJmqsXbw1FUkQhUqb8N" 
+                            width="100%" 
+                            height="380" 
+                            frameborder="0" 
+                            allowtransparency="true" 
+                            allow="encrypted-media">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2021 Section -->
+        <div class="year-section">
+            <h2 class="year-title">2021</h2>
+            <div class="playlist-container">
+                <div class="playlist-item">
+                    <div class="spotify-player">
+                        <iframe 
+                            src="https://open.spotify.com/embed/playlist/6iAYmxnAUjyO82YIJlmpmw" 
+                            width="100%" 
+                            height="380" 
+                            frameborder="0" 
+                            allowtransparency="true" 
+                            allow="encrypted-media">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2020 Section -->
+        <div class="year-section">
+            <h2 class="year-title">2020</h2>
+            <div class="playlist-container">
+                <div class="playlist-item">
+                    <div class="spotify-player">
+                        <iframe 
+                            src="https://open.spotify.com/embed/playlist/08EjlXbJRATa5UXYcM4qty" 
+                            width="100%" 
+                            height="380" 
+                            frameborder="0" 
+                            allowtransparency="true" 
+                            allow="encrypted-media">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="playlist-item">
+                    <div class="spotify-player">
+                        <iframe 
+                            src="https://open.spotify.com/embed/playlist/4sxdX97tf9gXrzvKrPop15" 
+                            width="100%" 
+                            height="380" 
+                            frameborder="0" 
+                            allowtransparency="true" 
+                            allow="encrypted-media">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2019 Section -->
+        <div class="year-section">
+            <h2 class="year-title">2019</h2>
+            <div class="playlist-container">
+                <div class="playlist-item">
+                    <div class="spotify-player">
+                        <iframe 
+                            src="https://open.spotify.com/embed/playlist/4ccaoB7jxdy6YMrSZQDZWC" 
+                            width="100%" 
+                            height="380" 
+                            frameborder="0" 
+                            allowtransparency="true" 
+                            allow="encrypted-media">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="playlist-item">
+                    <div class="spotify-player">
+                        <iframe 
+                            src="https://open.spotify.com/embed/playlist/7visqptvIu9008r4BYit12" 
+                            width="100%" 
+                            height="380" 
+                            frameborder="0" 
+                            allowtransparency="true" 
+                            allow="encrypted-media">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2018 Section -->
+        <div class="year-section">
+            <h2 class="year-title">2018</h2>
+            <div class="playlist-container">
+                <div class="playlist-item">
+                    <div class="spotify-player">
+                        <iframe 
+                            src="https://open.spotify.com/embed/playlist/14OrbSMRNfUzeiX6UaOkII" 
+                            width="100%" 
+                            height="380" 
+                            frameborder="0" 
+                            allowtransparency="true" 
+                            allow="encrypted-media">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2017 Section -->
+        <div class="year-section">
+            <h2 class="year-title">2017</h2>
+            <div class="playlist-container">
+                <div class="playlist-item">
+                    <div class="spotify-player">
+                        <iframe 
+                            src="https://open.spotify.com/embed/playlist/6gDqZ9Wsr2KE5At1oTlkPe" 
+                            width="100%" 
+                            height="380" 
+                            frameborder="0" 
+                            allowtransparency="true" 
+                            allow="encrypted-media">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="playlist-item">
+                    <div class="spotify-player">
+                        <iframe 
+                            src="https://open.spotify.com/embed/playlist/62aZyOlvbWtzKRqgccIaBn" 
+                            width="100%" 
+                            height="380" 
+                            frameborder="0" 
+                            allowtransparency="true" 
+                            allow="encrypted-media">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
