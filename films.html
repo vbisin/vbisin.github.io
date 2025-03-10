@@ -237,11 +237,11 @@
         function loadFilms() {
     const filmsContainer = document.getElementById('films-container');
     
-    // Try both absolute and relative paths to find the JSON file
-    fetch('./data/letterboxd.json')
+    // For GitHub Pages, use the absolute path from the root
+    fetch('/data/letterboxd.json')
         .then(response => {
             if (!response.ok) {
-                // If that fails, try with a relative path without the dot
+                // If that fails, try without the leading slash
                 return fetch('data/letterboxd.json');
             }
             return response;
@@ -253,7 +253,7 @@
             return response.json();
         })
         .then(films => {
-            console.log('Films loaded:', films); // Debug - check if films are loaded
+            console.log('Films loaded:', films); 
             if (films && films.length > 0) {
                 displayFilms(films);
             } else {
