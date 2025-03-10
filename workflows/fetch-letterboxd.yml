@@ -1,0 +1,33 @@
+name: Fetch Letterboxd Data
+
+on:
+  schedule:
+    - cron: '0 */12 * * *'  # Run every 12 hours
+  workflow_dispatch:  # Allow manual triggers
+
+jobs:
+  fetch-letterboxd:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      
+      - name: Install dependencies
+        run: npm install axios xml2js
+      
+      - name: Fetch and process Letterboxd data
+        run: node .github/scripts/fetch-letterboxd.js
+      
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git add data/letterboxd.json
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update Letterboxd data"
+          git push
