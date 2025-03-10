@@ -94,7 +94,6 @@
         .letterboxd-logo {
             width: 24px;
             height: 24px;
-            color: white;
         }
         .letterboxd-info {
             text-align: left;
@@ -205,8 +204,10 @@
             <a href="https://letterboxd.com/gianvittorio/" target="_blank" class="letterboxd-preview">
                 <div class="letterboxd-card">
                     <div class="letterboxd-avatar">
-                        <svg viewBox="0 0 24 24" fill="currentColor" class="letterboxd-logo">
-                            <path d="M8.29 16.752V7.2H1.497v9.552H8.29zm7.193 0V7.2h-6.793v9.552h6.793zm7.193 0V7.2h-6.793v9.552h6.793z"/>
+                        <svg viewBox="0 0 100 100" class="letterboxd-logo">
+                            <circle cx="30" cy="50" r="25" fill="#F78C3C" />
+                            <circle cx="50" cy="50" r="25" fill="#7AC74F" />
+                            <circle cx="70" cy="50" r="25" fill="#4099DA" />
                         </svg>
                     </div>
                     <div class="letterboxd-info">
@@ -234,36 +235,41 @@
         });
 
         function loadFilms() {
-            const filmsContainer = document.getElementById('films-container');
-            
-            // Try both path variations
-            fetch('./data/letterboxd.json')
-                .then(response => {
-                    if (!response.ok) {
-                        // If that fails, try with a relative path
-                        return fetch('data/letterboxd.json');
-                    }
-                    return response;
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(films => {
-                    displayFilms(films);
-                })
-                .catch(error => {
-                    console.error('Error loading film data:', error);
-                    filmsContainer.innerHTML = `
-                        <div class="error-message">
-                            <p>Could not load film data.</p>
-                            <p>Please trigger the GitHub Action to fetch Letterboxd data.</p>
-                        </div>
-                    `;
-                });
-        }
+    const filmsContainer = document.getElementById('films-container');
+    
+    // Try both absolute and relative paths to find the JSON file
+    fetch('./data/letterboxd.json')
+        .then(response => {
+            if (!response.ok) {
+                // If that fails, try with a relative path without the dot
+                return fetch('data/letterboxd.json');
+            }
+            return response;
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(films => {
+            console.log('Films loaded:', films); // Debug - check if films are loaded
+            if (films && films.length > 0) {
+                displayFilms(films);
+            } else {
+                throw new Error('No films found in the JSON file');
+            }
+        })
+        .catch(error => {
+            console.error('Error loading film data:', error);
+            filmsContainer.innerHTML = `
+                <div class="error-message">
+                    <p>Could not load film data: ${error.message}</p>
+                    <p>Check the browser console for more details.</p>
+                </div>
+            `;
+        });
+}
 
         function displayFilms(films) {
             const filmsContainer = document.getElementById('films-container');
