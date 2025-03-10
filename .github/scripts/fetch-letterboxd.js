@@ -13,24 +13,29 @@ if (!fs.existsSync(dataDir)) {
 // Function to fetch Letterboxd RSS feed
 async function fetchLetterboxdData() {
   try {
-    console.log('Fetching Letterboxd RSS feed for user gianvittorio...');
+    console.log('Starting Letterboxd data fetch process...');
+    console.log('Fetching from RSS URL: https://letterboxd.com/gianvittorio/rss/');
+    
     // Fetch RSS feed
     const response = await axios.get('https://letterboxd.com/gianvittorio/rss/', {
       headers: {
         'User-Agent': 'Mozilla/5.0 (compatible; GitHubAction/1.0)'
       },
-      timeout: 15000 // 15 seconds timeout
+      timeout: 30000 // 30 seconds timeout
     });
 
-    console.log('RSS feed fetched successfully, parsing XML...');
+    console.log('RSS feed fetched successfully. Response status:', response.status);
+    
     // Parse XML to JSON
+    console.log('Parsing XML to JSON...');
     const parser = new xml2js.Parser({ explicitArray: false });
     const result = await parser.parseStringPromise(response.data);
-
+    
+    console.log('XML parsing completed. Checking for channel items...');
+    
     // Check if there are items
     if (!result.rss || !result.rss.channel || !result.rss.channel.item) {
       console.log('No items found in RSS feed.');
-      // Save empty array
       fs.writeFileSync(
         path.join(dataDir, 'letterboxd.json'),
         JSON.stringify([], null, 2)
@@ -38,48 +43,59 @@ async function fetchLetterboxdData() {
       console.log('Saved empty array to letterboxd.json');
       return;
     }
-
+    
     // Process and filter the data
     const items = Array.isArray(result.rss.channel.item) 
       ? result.rss.channel.item 
-      : result.rss.channel.item ? [result.rss.channel.item] : [];
+      : [result.rss.channel.item];
       
     console.log(`Found ${items.length} items in RSS feed`);
 
-    // Filter for diary entries (watched films)
+    // Process all diary entries (all entries are watched films)
     const watchedFilms = items
-      .filter(item => {
-        // Make sure it's a watched film
-        const isWatched = item.description && typeof item.description === 'string' && 
-                         (item.description.includes('watched') || item.description.includes('rewatched'));
-        if (isWatched) {
-          console.log(`Found watched film: ${item.title}`);
-        }
-        return isWatched;
-      })
       .map(item => {
         try {
-          // Extract film title
-          const title = item.title.split(' - ')[0].trim();
+          // Extract film title from title (remove year and rating)
+          let title = item.title || '';
+          if (title.includes(',')) {
+            title = title.split(',')[0].trim();
+          }
+          if (title.includes('-')) {
+            title = title.split('-')[0].trim();
+          }
           
           // Extract poster URL
           let posterUrl = '';
-          const posterMatch = item.description.match(/<img src="([^"]+)"/);
-          if (posterMatch && posterMatch[1]) {
-            posterUrl = posterMatch[1];
+          if (item.description && typeof item.description === 'string') {
+            const posterMatch = item.description.match(/<img src="([^"]+)"/);
+            if (posterMatch && posterMatch[1]) {
+              posterUrl = posterMatch[1];
+            }
           }
           
-          // Extract rating
+          // Extract rating - first check letterboxd:memberRating field
           let rating = 0;
-          const ratingMatch = item.description.match(/(\d+(?:\.\d+)?)-star/);
-          if (ratingMatch && ratingMatch[1]) {
-            rating = parseFloat(ratingMatch[1]);
+          if (item['letterboxd:memberRating']) {
+            rating = parseFloat(item['letterboxd:memberRating']);
+          } else if (item.title && item.title.includes('★')) {
+            // Try to extract from title if present (e.g., "Film, 2022 - ★★★½")
+            const stars = item.title.match(/★+(?:½)?/);
+            if (stars) {
+              const fullStars = (stars[0].match(/★/g) || []).length;
+              const hasHalf = stars[0].includes('½');
+              rating = fullStars + (hasHalf ? 0.5 : 0);
+            }
           }
           
+          // Get watch date (from letterboxd:watchedDate or pubDate)
+          const watchDate = item['letterboxd:watchedDate'] 
+            ? new Date(item['letterboxd:watchedDate']).toISOString() 
+            : item.pubDate || new Date().toISOString();
+            
           return {
             title,
-            link: item.link,
-            watchDate: item.pubDate,
+            link: item.link || '',
+            watchDate,
             posterUrl,
             rating
           };
@@ -88,7 +104,7 @@ async function fetchLetterboxdData() {
           return null;
         }
       })
-      .filter(item => item !== null)
+      .filter(item => item !== null && item.title)
       .slice(0, 12); // Limit to 12 most recent films
     
     console.log(`Processed ${watchedFilms.length} watched films`);
@@ -101,9 +117,10 @@ async function fetchLetterboxdData() {
 
     console.log(`Successfully fetched and saved ${watchedFilms.length} films`);
   } catch (error) {
-    console.error('Error fetching Letterboxd data:', error.message);
+    console.error('Error fetching Letterboxd data:');
+    console.error(error);
     
-    // Make sure data directory exists even after error
+    // Make sure data directory exists
     if (!fs.existsSync(dataDir)) {
       fs.mkdirSync(dataDir, { recursive: true });
     }
