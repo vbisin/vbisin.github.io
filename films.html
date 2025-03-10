@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Films - Vittorio Bisin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #E6E6FA;
+            color: #333333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 1em;
+            color: #333333;
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 1.2em;
+            color: #444444;
+            font-size: 1.1em;
+            text-align: center;
+        }
+        .nav-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5em 1em;
+            color: #666666;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-radius: 20px;
+            background-color: white;
+        }
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .letterboxd-profile {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .letterboxd-link {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #202830;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        .letterboxd-link:hover {
+            background-color: #14181c;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .films-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        .film-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .film-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        .film-poster {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 2px solid #E6E6FA;
+            background-color: #f0f0f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .film-poster img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+        .film-info {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .film-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            color: #333333;
+        }
+        .film-date {
+            color: #777777;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        .film-rating {
+            color: #44a244;
+            font-size: 1.2em;
+            margin-top: auto;
+        }
+        .rating-0-5 { color: #d17777; }
+        .rating-1 { color: #d17777; }
+        .rating-1-5 { color: #d17777; }
+        .rating-2 { color: #d17777; }
+        .rating-2-5 { color: #e3b341; }
+        .rating-3 { color: #e3b341; }
+        .rating-3-5 { color: #74b474; }
+        .rating-4 { color: #74b474; }
+        .rating-4-5 { color: #44a244; }
+        .rating-5 { color: #44a244; }
+        .loading {
+            text-align: center;
+            padding: 40px;
+            font-size: 1.2em;
+            color: #666;
+        }
+        .error-message {
+            text-align: center;
+            color: #d17777;
+            padding: 20px;
+        }
+        .last-updated {
+            text-align: center;
+            font-size: 0.9em;
+            color: #888;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="nav-link">← Home</a>
+    
+    <div class="container">
+        <h1>Films</h1>
+        
+        <div class="letterboxd-profile">
+            <p>I keep track of my film watching on Letterboxd</p>
+            <a href="https://letterboxd.com/gianvittorio/" target="_blank" class="letterboxd-link">View My Letterboxd Profile</a>
+        </div>
+        
+        <h2 style="text-align: center; margin-top: 40px; margin-bottom: 20px;">Recently Watched</h2>
+        
+        <div id="films-container" class="films-grid">
+            <div class="loading">Loading films...</div>
+        </div>
+        
+        <div class="last-updated">
+            <p id="update-time">Data refreshes every 12 hours</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadFilms();
+        });
+
+        function loadFilms() {
+            const filmsContainer = document.getElementById('films-container');
+            
+            fetch('/data/letterboxd.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(films => {
+                    displayFilms(films);
+                })
+                .catch(error => {
+                    console.error('Error loading film data:', error);
+                    filmsContainer.innerHTML = `
+                        <div class="error-message">
+                            <p>Could not load film data.</p>
+                            <p>Please refresh the page or try again later.</p>
+                        </div>
+                    `;
+                });
+        }
+
+        function displayFilms(films) {
+            const filmsContainer = document.getElementById('films-container');
+            
+            if (!films || films.length === 0) {
+                filmsContainer.innerHTML = '<div class="error-message">No films found</div>';
+                return;
+            }
+            
+            filmsContainer.innerHTML = '';
+            
+            films.forEach(film => {
+                // Format date
+                const watchDate = new Date(film.watchDate);
+                const formattedDate = watchDate.toLocaleDateString('en-US', {
+                    month: 'long',
+                    day: 'numeric',
+                    year: 'numeric'
+                });
+                
+                // Generate rating stars
+                let ratingStars = '';
+                const ratingClass = `rating-${film.rating.toString().replace('.', '-')}`;
+                
+                for (let i = 1; i <= 5; i++) {
+                    if (i <= Math.floor(film.rating)) {
+                        ratingStars += '★';
+                    } else if (i - 0.5 <= film.rating) {
+                        ratingStars += '½';
+                    } else {
+                        ratingStars += '☆';
+                    }
+                }
+                
+                // Create film card
+                const filmCard = document.createElement('div');
+                filmCard.className = 'film-card';
+                filmCard.innerHTML = `
+                    <a href="${film.link}" target="_blank" class="film-poster">
+                        <img src="${film.posterUrl || 'https://placehold.co/230x300?text=No+Poster'}" alt="${film.title}" loading="lazy">
+                    </a>
+                    <div class="film-info">
+                        <div class="film-title">${film.title}</div>
+                        <div class="film-date">${formattedDate}</div>
+                        <div class="film-rating ${ratingClass}">${ratingStars}</div>
+                    </div>
+                `;
+                
+                filmsContainer.appendChild(filmCard);
+            });
+        }
+    </script>
+</body>
+</html>
