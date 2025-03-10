@@ -8,6 +8,8 @@ on:
 jobs:
   fetch-letterboxd:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Explicit permission to write to repository
     
     steps:
       - name: Checkout repository
@@ -21,8 +23,16 @@ jobs:
       - name: Install dependencies
         run: npm install axios xml2js
       
+      - name: Create data directory
+        run: mkdir -p data
+      
       - name: Fetch and process Letterboxd data
         run: node .github/scripts/fetch-letterboxd.js
+      
+      - name: Debug info
+        run: |
+          ls -la data/
+          cat data/letterboxd.json || echo "File is empty or doesn't exist"
       
       - name: Commit and push if changed
         run: |
@@ -31,3 +41,5 @@ jobs:
           git add data/letterboxd.json
           git diff --quiet && git diff --staged --quiet || git commit -m "Update Letterboxd data"
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
