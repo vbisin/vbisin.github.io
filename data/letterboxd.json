@@ -1,5 +1,12 @@
 [
   {
+    "title": "Conclave",
+    "link": "https://letterboxd.com/gianvittorio/film/conclave/",
+    "watchDate": "2025-03-28T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/8/7/7/2/5/3/877253-conclave-0-600-0-900-crop.jpg?v=f9cbf50dec",
+    "rating": 0
+  },
+  {
     "title": "The Goldfinch",
     "link": "https://letterboxd.com/gianvittorio/film/the-goldfinch/",
     "watchDate": "2025-03-28T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2025-02-02T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/4/7/8/4/2/8/478428-the-brutalist-0-600-0-900-crop.jpg?v=2f8cae2ea5",
     "rating": 4.5
-  },
-  {
-    "title": "War for the Planet of the Apes",
-    "link": "https://letterboxd.com/gianvittorio/film/war-for-the-planet-of-the-apes/",
-    "watchDate": "2025-01-27T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/sm/upload/8x/qv/nm/63/ijQHiImv16vNSeZQsmih04kwn0C-0-600-0-900-crop.jpg?v=fa3e7ba9ed",
-    "rating": 1
   }
 ]
