@@ -11,6 +11,7 @@
             padding: 20px;
             background-color: #E6E6FA;
             color: #333333;
+            position: relative;
         }
         .container {
             max-width: 800px;
@@ -65,9 +66,28 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
+        .youtube-video {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body>
+    <iframe 
+        class="youtube-video"
+        width="400"
+        height="225"
+        src="https://www.youtube.com/embed/JfqG7jqc9aY"
+        title="YouTube video"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+    </iframe>
+
     <a href="index.html" class="nav-link">← Home</a>
     
     <div class="container">
