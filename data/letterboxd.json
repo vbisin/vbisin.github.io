@@ -1,5 +1,12 @@
 [
   {
+    "title": "The Leopard",
+    "link": "https://letterboxd.com/gianvittorio/film/the-leopard-2025/",
+    "watchDate": "2025-04-16T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/3/2/3/0/8/8/1323088-the-leopard-2025-0-600-0-900-crop.jpg?v=cd30d4545c",
+    "rating": 1
+  },
+  {
     "title": "Sicario: Day of the Soldado",
     "link": "https://letterboxd.com/gianvittorio/film/sicario-day-of-the-soldado/",
     "watchDate": "2025-04-12T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2025-02-13T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/1/1/5/8/7/4/1115874-no-other-land-0-600-0-900-crop.jpg?v=7a96e00fce",
     "rating": 3.5
-  },
-  {
-    "title": "Gladiator II",
-    "link": "https://letterboxd.com/gianvittorio/film/gladiator-ii/",
-    "watchDate": "2025-02-09T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/4/8/6/9/7/8/486978-gladiator-ii-0-600-0-900-crop.jpg?v=0fb2edf525",
-    "rating": 1.5
   }
 ]
