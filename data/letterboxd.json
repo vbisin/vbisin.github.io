@@ -1,5 +1,12 @@
 [
   {
+    "title": "8½",
+    "link": "https://letterboxd.com/gianvittorio/film/8-half/1/",
+    "watchDate": "2025-04-26T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/sm/upload/qt/2y/ms/4w/5pQlc8dp5dXzWg1yM70DZrsDpOl-0-600-0-900-crop.jpg?v=17965d9ac6",
+    "rating": 4
+  },
+  {
     "title": "Black Mirror: Common People",
     "link": "https://letterboxd.com/gianvittorio/film/black-mirror-common-people/",
     "watchDate": "2025-04-20T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2025-02-21T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/9/0/1/6/7/1/901671-im-still-here-2024-0-600-0-900-crop.jpg?v=62be7ea503",
     "rating": 3.5
-  },
-  {
-    "title": "Emilia Pérez",
-    "link": "https://letterboxd.com/gianvittorio/film/emilia-perez/",
-    "watchDate": "2025-02-17T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/8/7/7/6/0/8/877608-emilia-perez-0-600-0-900-crop.jpg?v=cc7782128e",
-    "rating": 0
   }
 ]
