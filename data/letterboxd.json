@@ -1,10 +1,38 @@
 [
   {
+    "title": "8½",
+    "link": "https://letterboxd.com/gianvittorio/film/8-half/1/",
+    "watchDate": "2025-04-26T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/sm/upload/qt/2y/ms/4w/5pQlc8dp5dXzWg1yM70DZrsDpOl-0-600-0-900-crop.jpg?v=17965d9ac6",
+    "rating": 4
+  },
+  {
+    "title": "Black Mirror: Common People",
+    "link": "https://letterboxd.com/gianvittorio/film/black-mirror-common-people/",
+    "watchDate": "2025-04-20T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/3/3/5/3/7/8/1335378-black-mirror-common-people-0-600-0-900-crop.jpg?v=3c4c91704f",
+    "rating": 1
+  },
+  {
+    "title": "The Leopard",
+    "link": "https://letterboxd.com/gianvittorio/film/the-leopard-2025/",
+    "watchDate": "2025-04-16T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/3/2/3/0/8/8/1323088-the-leopard-2025-0-600-0-900-crop.jpg?v=cd30d4545c",
+    "rating": 1
+  },
+  {
+    "title": "Sicario: Day of the Soldado",
+    "link": "https://letterboxd.com/gianvittorio/film/sicario-day-of-the-soldado/",
+    "watchDate": "2025-04-12T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/3/3/5/2/9/4/335294-sicario-day-of-the-soldado-0-600-0-900-crop.jpg?v=fc6e56511d",
+    "rating": 3.5
+  },
+  {
     "title": "Conclave",
     "link": "https://letterboxd.com/gianvittorio/film/conclave/",
     "watchDate": "2025-03-28T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/8/7/7/2/5/3/877253-conclave-0-600-0-900-crop.jpg?v=f9cbf50dec",
-    "rating": 0
+    "rating": 3
   },
   {
     "title": "The Goldfinch",
@@ -54,33 +82,5 @@
     "watchDate": "2025-02-21T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/9/0/1/6/7/1/901671-im-still-here-2024-0-600-0-900-crop.jpg?v=62be7ea503",
     "rating": 3.5
-  },
-  {
-    "title": "Emilia Pérez",
-    "link": "https://letterboxd.com/gianvittorio/film/emilia-perez/",
-    "watchDate": "2025-02-17T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/8/7/7/6/0/8/877608-emilia-perez-0-600-0-900-crop.jpg?v=cc7782128e",
-    "rating": 0
-  },
-  {
-    "title": "No Other Land",
-    "link": "https://letterboxd.com/gianvittorio/film/no-other-land/",
-    "watchDate": "2025-02-13T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/1/1/5/8/7/4/1115874-no-other-land-0-600-0-900-crop.jpg?v=7a96e00fce",
-    "rating": 3.5
-  },
-  {
-    "title": "Gladiator II",
-    "link": "https://letterboxd.com/gianvittorio/film/gladiator-ii/",
-    "watchDate": "2025-02-09T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/4/8/6/9/7/8/486978-gladiator-ii-0-600-0-900-crop.jpg?v=0fb2edf525",
-    "rating": 1.5
-  },
-  {
-    "title": "The Brutalist",
-    "link": "https://letterboxd.com/gianvittorio/film/the-brutalist/",
-    "watchDate": "2025-02-02T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/4/7/8/4/2/8/478428-the-brutalist-0-600-0-900-crop.jpg?v=2f8cae2ea5",
-    "rating": 4.5
   }
 ]
