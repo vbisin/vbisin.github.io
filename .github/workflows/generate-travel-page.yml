@@ -11,12 +11,22 @@ on:
       - '.github/workflows/generate-travel-page.yml'
       - 'scripts/generate_travel_page.py'
 
+# Prevent multiple workflow runs from happening simultaneously
+concurrency: 
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   generate-page:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -35,9 +45,14 @@ jobs:
       - name: Generate travel page
         run: python scripts/generate_travel_page.py
         
-      - name: Commit and push if changed
+      - name: Commit and push changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add travel.html
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Update travel page [skip ci]" && git push) 
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update travel page [skip ci]" && git push)
+
+      # Wait for any existing pages build to complete
+      - name: Wait for previous deployments
+        run: sleep 30s
+        shell: bash 
