@@ -11,6 +11,10 @@ def get_media_files(directory):
             media_files.append(file)
     return sorted(media_files)
 
+def format_path_for_url(path):
+    """Format a path to be URL-friendly."""
+    return path.lower().replace(' ', '_')
+
 def generate_html():
     # Base directory for images
     base_dir = Path('images')
@@ -140,11 +144,11 @@ def generate_html():
                                 <div class="image-container h-[450px]">
                                     {% if media.endswith(('.mp4', '.mov')) %}
                                     <video controls class="w-full h-full object-contain">
-                                        <source src="./images/{{ year }}/{{ country }}/{{ city }}/{{ media }}" type="video/mp4">
+                                        <source src="images/{{ year }}/{{ years[year][country]['_dir_names'][country] }}/{{ years[year][country]['_dir_names'][city] }}/{{ media }}" type="video/mp4">
                                         Your browser does not support the video tag.
                                     </video>
                                     {% else %}
-                                    <img src="./images/{{ year }}/{{ country }}/{{ city }}/{{ media }}" alt="{{ media.split('.')[0] }}" loading="lazy">
+                                    <img src="images/{{ year }}/{{ years[year][country]['_dir_names'][country] }}/{{ years[year][country]['_dir_names'][city] }}/{{ media }}" alt="{{ media.split('.')[0] }}" loading="lazy">
                                     {% endif %}
                                 </div>
                             </div>
@@ -180,13 +184,15 @@ def generate_html():
                 continue
                 
             country = country_dir.name.title()
-            years[year][country] = {}
+            years[year][country] = {'_dir_names': {}}
+            years[year][country]['_dir_names'][country] = country_dir.name  # Store original directory name
             
             for city_dir in country_dir.iterdir():
                 if not city_dir.is_dir():
                     continue
                     
                 city = city_dir.name.title()
+                years[year][country]['_dir_names'][city] = city_dir.name  # Store original directory name
                 media_files = get_media_files(city_dir)
                 if media_files:
                     years[year][country][city] = media_files
