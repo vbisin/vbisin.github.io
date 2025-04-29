@@ -124,31 +124,31 @@ def generate_html():
                 <h1 class="text-4xl font-bold text-gray-800 mb-4">Travel</h1>
             </div>
 
-            {% for year in years %}
+            {% for year in sorted(years.keys(), reverse=True) %}
             <!-- {{ year }} Section -->
             <div class="mb-20">
                 <h2 class="text-3xl font-bold text-gray-800 mb-8">{{ year }}</h2>
 
-                {% for country in years[year] %}
+                {% for country in sorted(years[year].keys()) %}
                 <!-- {{ country }} Section -->
                 <div class="mb-16">
-                    <h2 class="text-2xl font-semibold text-gray-800 mb-6">{{ country }}</h2>
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-6">{{ country.replace('_', ' ') | title }}</h2>
                     
-                    {% for city in years[year][country] %}
+                    {% for city, media_list in sorted(years[year][country].items()) %}
                     <!-- {{ city }} -->
                     <div class="mb-12">
-                        <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">{{ city }}</h3>
-                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                            {% for media in years[year][country][city] %}
-                            <div class="col-span-2 row-span-2 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                        <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">{{ city.replace('_', ' ') | title }}</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            {% for media in media_list %}
+                            <div class="overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02]">
                                 <div class="image-container h-[450px]">
                                     {% if media.endswith(('.mp4', '.mov')) %}
                                     <video controls class="w-full h-full object-contain">
-                                        <source src="images/{{ year }}/{{ years[year][country]['_dir_names'][country] }}/{{ years[year][country]['_dir_names'][city] }}/{{ media }}" type="video/mp4">
+                                        <source src="images/{{ year }}/{{ country }}/{{ city }}/{{ media }}" type="video/mp4">
                                         Your browser does not support the video tag.
                                     </video>
                                     {% else %}
-                                    <img src="images/{{ year }}/{{ years[year][country]['_dir_names'][country] }}/{{ years[year][country]['_dir_names'][city] }}/{{ media }}" alt="{{ media.split('.')[0] }}" loading="lazy">
+                                    <img src="images/{{ year }}/{{ country }}/{{ city }}/{{ media }}" alt="{{ media.split('.')[0] }}" loading="lazy">
                                     {% endif %}
                                 </div>
                             </div>
@@ -183,16 +183,14 @@ def generate_html():
             if not country_dir.is_dir():
                 continue
                 
-            country = country_dir.name.title()
-            years[year][country] = {'_dir_names': {}}
-            years[year][country]['_dir_names'][country] = country_dir.name  # Store original directory name
+            country = country_dir.name
+            years[year][country] = {}
             
             for city_dir in country_dir.iterdir():
                 if not city_dir.is_dir():
                     continue
                     
-                city = city_dir.name.title()
-                years[year][country]['_dir_names'][city] = city_dir.name  # Store original directory name
+                city = city_dir.name
                 media_files = get_media_files(city_dir)
                 if media_files:
                     years[year][country][city] = media_files
