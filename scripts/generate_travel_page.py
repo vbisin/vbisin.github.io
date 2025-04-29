@@ -1,7 +1,7 @@
 import os
 import json
 from pathlib import Path
-from jinja2 import Template
+from jinja2 import Template, Environment
 
 def get_media_files(directory):
     """Get all image and video files in a directory."""
@@ -131,17 +131,17 @@ def generate_html():
                     <h1 class="text-4xl font-bold text-gray-800 mb-4">Travel</h1>
                 </div>
 
-                {% for year in sorted(years.keys(), reverse=True) %}
+                {% for year in years.keys()|sort(reverse=true) %}
                 <!-- {{ year }} Section -->
                 <div class="mb-20">
                     <h2 class="text-3xl font-bold text-gray-800 mb-8">{{ year }}</h2>
 
-                    {% for country in sorted(years[year].keys()) %}
+                    {% for country in years[year].keys()|sort %}
                     <!-- {{ country }} Section -->
                     <div class="mb-16">
                         <h2 class="text-2xl font-semibold text-gray-800 mb-6">{{ country.replace('_', ' ') | title }}</h2>
                         
-                        {% for city, media_list in sorted(years[year][country].items()) %}
+                        {% for city, media_list in years[year][country].items()|sort %}
                         <!-- {{ city }} -->
                         <div class="mb-12">
                             <h3 class="text-xl text-gray-700 mb-4 pl-2 border-l-4 border-purple-300">{{ city.replace('_', ' ') | title }}</h3>
@@ -172,8 +172,9 @@ def generate_html():
         </html>
         """
         
-        # Create template
-        template = Template(template_str)
+        # Create environment and template
+        env = Environment()
+        template = env.from_string(template_str)
         
         # Build the data structure
         years = {}
