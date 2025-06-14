@@ -1,5 +1,12 @@
 [
   {
+    "title": "Nathan for You: Finding Frances",
+    "link": "https://letterboxd.com/gianvittorio/film/nathan-for-you-finding-frances/",
+    "watchDate": "2025-06-14T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/4/1/6/7/8/6/416786-nathan-for-you-finding-frances-0-600-0-900-crop.jpg?v=4868090c74",
+    "rating": 4
+  },
+  {
     "title": "Mickey 17",
     "link": "https://letterboxd.com/gianvittorio/film/mickey-17/",
     "watchDate": "2025-06-07T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2025-03-07T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/3/1/0/0/2/3/310023-graduation-0-600-0-900-crop.jpg?v=81d0b70c46",
     "rating": 5
-  },
-  {
-    "title": "A Complete Unknown",
-    "link": "https://letterboxd.com/gianvittorio/film/a-complete-unknown/",
-    "watchDate": "2025-02-28T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/5/8/6/5/8/3/586583-a-complete-unknown-0-600-0-900-crop.jpg?v=f14ab6ecf6",
-    "rating": 4
   }
 ]
