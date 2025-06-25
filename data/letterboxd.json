@@ -1,5 +1,19 @@
 [
   {
+    "title": "Chernobyl",
+    "link": "https://letterboxd.com/gianvittorio/film/chernobyl/",
+    "watchDate": "2025-06-24T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/5/3/2/0/8/2/532082-chernobyl-0-600-0-900-crop.jpg?v=ff1851eaee",
+    "rating": 5
+  },
+  {
+    "title": "Chernobyl: The Lost Tapes",
+    "link": "https://letterboxd.com/gianvittorio/film/chernobyl-the-lost-tapes/",
+    "watchDate": "2025-06-24T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/8/4/9/3/1/3/849313-chernobyl-the-lost-tapes-0-600-0-900-crop.jpg?v=6fb9680e52",
+    "rating": 4
+  },
+  {
     "title": "Nathan for You: Finding Frances",
     "link": "https://letterboxd.com/gianvittorio/film/nathan-for-you-finding-frances/",
     "watchDate": "2025-06-14T00:00:00.000Z",
@@ -68,19 +82,5 @@
     "watchDate": "2025-03-28T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/4/0/4/0/4/6/404046-the-goldfinch-0-600-0-900-crop.jpg?v=aaa013d6dd",
     "rating": 2
-  },
-  {
-    "title": "Bad Education",
-    "link": "https://letterboxd.com/gianvittorio/film/bad-education-2019/",
-    "watchDate": "2025-03-28T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/4/6/0/0/4/4/460044-bad-education-0-600-0-900-crop.jpg?v=4a9135de30",
-    "rating": 3.5
-  },
-  {
-    "title": "Graduation",
-    "link": "https://letterboxd.com/gianvittorio/film/graduation-2016/",
-    "watchDate": "2025-03-07T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/3/1/0/0/2/3/310023-graduation-0-600-0-900-crop.jpg?v=81d0b70c46",
-    "rating": 5
   }
 ]
