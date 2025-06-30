@@ -1,5 +1,12 @@
 [
   {
+    "title": "Vertigo",
+    "link": "https://letterboxd.com/gianvittorio/film/vertigo/",
+    "watchDate": "2025-06-29T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/sm/upload/q9/3o/ng/om/obhM86qyv8RsE69XSMTtT9FdE0b-0-600-0-900-crop.jpg?v=1403a5e003",
+    "rating": 0
+  },
+  {
     "title": "Chernobyl",
     "link": "https://letterboxd.com/gianvittorio/film/chernobyl/",
     "watchDate": "2025-06-24T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2025-03-28T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/8/7/7/2/5/3/877253-conclave-0-600-0-900-crop.jpg?v=f9cbf50dec",
     "rating": 3
-  },
-  {
-    "title": "The Goldfinch",
-    "link": "https://letterboxd.com/gianvittorio/film/the-goldfinch/",
-    "watchDate": "2025-03-28T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/4/0/4/0/4/6/404046-the-goldfinch-0-600-0-900-crop.jpg?v=aaa013d6dd",
-    "rating": 2
   }
 ]
