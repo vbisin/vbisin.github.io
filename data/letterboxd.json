@@ -1,5 +1,12 @@
 [
   {
+    "title": "The Apprentice",
+    "link": "https://letterboxd.com/gianvittorio/film/the-apprentice-2024/",
+    "watchDate": "2025-07-03T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/sm/upload/yj/8m/d9/4r/apprentice_xxlg-0-600-0-900-crop.jpg?v=684581b66b",
+    "rating": 3
+  },
+  {
     "title": "Vertigo",
     "link": "https://letterboxd.com/gianvittorio/film/vertigo/",
     "watchDate": "2025-06-29T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2025-04-12T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/3/3/5/2/9/4/335294-sicario-day-of-the-soldado-0-600-0-900-crop.jpg?v=fc6e56511d",
     "rating": 3.5
-  },
-  {
-    "title": "Conclave",
-    "link": "https://letterboxd.com/gianvittorio/film/conclave/",
-    "watchDate": "2025-03-28T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/8/7/7/2/5/3/877253-conclave-0-600-0-900-crop.jpg?v=f9cbf50dec",
-    "rating": 3
   }
 ]
