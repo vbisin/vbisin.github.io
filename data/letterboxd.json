@@ -1,5 +1,33 @@
 [
   {
+    "title": "Zamora",
+    "link": "https://letterboxd.com/gianvittorio/film/zamora/",
+    "watchDate": "2025-07-13T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/9/6/1/8/3/7/961837-zamora-0-600-0-900-crop.jpg?v=30f14c5bcc",
+    "rating": 3
+  },
+  {
+    "title": "Hey Joe",
+    "link": "https://letterboxd.com/gianvittorio/film/hey-joe-2024/",
+    "watchDate": "2025-07-13T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/8/2/8/5/8/9/828589-hey-joe-2024-0-600-0-900-crop.jpg?v=e0a160bf4c",
+    "rating": 2.5
+  },
+  {
+    "title": "A Real Pain",
+    "link": "https://letterboxd.com/gianvittorio/film/a-real-pain/",
+    "watchDate": "2025-07-13T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/9/1/3/2/5/8/913258-a-real-pain-0-600-0-900-crop.jpg?v=893a943872",
+    "rating": 2
+  },
+  {
+    "title": "Nosferatu",
+    "link": "https://letterboxd.com/gianvittorio/film/nosferatu-2024/",
+    "watchDate": "2025-07-13T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/3/5/9/5/0/5/359505-nosferatu-2024-0-600-0-900-crop.jpg?v=a12d4ad648",
+    "rating": 4.5
+  },
+  {
     "title": "The Apprentice",
     "link": "https://letterboxd.com/gianvittorio/film/the-apprentice-2024/",
     "watchDate": "2025-07-03T00:00:00.000Z",
@@ -54,33 +82,5 @@
     "watchDate": "2025-05-17T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/9/8/1/4/0/0/981400-the-room-next-door-0-600-0-900-crop.jpg?v=6eabb7ce9a",
     "rating": 2
-  },
-  {
-    "title": "8½",
-    "link": "https://letterboxd.com/gianvittorio/film/8-half/1/",
-    "watchDate": "2025-04-26T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/sm/upload/qt/2y/ms/4w/5pQlc8dp5dXzWg1yM70DZrsDpOl-0-600-0-900-crop.jpg?v=17965d9ac6",
-    "rating": 4.5
-  },
-  {
-    "title": "Black Mirror: Common People",
-    "link": "https://letterboxd.com/gianvittorio/film/black-mirror-common-people/",
-    "watchDate": "2025-04-20T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/sm/upload/50/ta/ci/83/BM_CommonPeople-0-600-0-900-crop.jpg?v=0b5d34cea5",
-    "rating": 1
-  },
-  {
-    "title": "The Leopard",
-    "link": "https://letterboxd.com/gianvittorio/film/the-leopard-2025/",
-    "watchDate": "2025-04-16T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/3/2/3/0/8/8/1323088-the-leopard-2025-0-600-0-900-crop.jpg?v=cd30d4545c",
-    "rating": 1
-  },
-  {
-    "title": "Sicario: Day of the Soldado",
-    "link": "https://letterboxd.com/gianvittorio/film/sicario-day-of-the-soldado/",
-    "watchDate": "2025-04-12T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/3/3/5/2/9/4/335294-sicario-day-of-the-soldado-0-600-0-900-crop.jpg?v=fc6e56511d",
-    "rating": 3.5
   }
 ]
