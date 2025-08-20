@@ -1,5 +1,12 @@
 [
   {
+    "title": "The Price of Nonna's Inheritance",
+    "link": "https://letterboxd.com/gianvittorio/film/the-price-of-nonnas-inheritance/",
+    "watchDate": "2025-08-19T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/0/6/2/2/1/0/1062210-the-price-of-nonna-s-inheritance-0-600-0-900-crop.jpg?v=1278639748",
+    "rating": 3.5
+  },
+  {
     "title": "Beyond the Hills",
     "link": "https://letterboxd.com/gianvittorio/film/beyond-the-hills/",
     "watchDate": "2025-08-10T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2025-06-29T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/sm/upload/q9/3o/ng/om/obhM86qyv8RsE69XSMTtT9FdE0b-0-600-0-900-crop.jpg?v=1403a5e003",
     "rating": 0
-  },
-  {
-    "title": "Chernobyl",
-    "link": "https://letterboxd.com/gianvittorio/film/chernobyl/",
-    "watchDate": "2025-06-24T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/5/3/2/0/8/2/532082-chernobyl-0-600-0-900-crop.jpg?v=ff1851eaee",
-    "rating": 5
   }
 ]
