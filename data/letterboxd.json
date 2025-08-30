@@ -1,5 +1,19 @@
 [
   {
+    "title": "Fire",
+    "link": "https://letterboxd.com/gianvittorio/film/fire-2021/",
+    "watchDate": "2025-08-30T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/7/8/8/8/1/1/788811-fire-0-600-0-900-crop.jpg?v=b8bb00d24d",
+    "rating": 2
+  },
+  {
+    "title": "The Fall Guy",
+    "link": "https://letterboxd.com/gianvittorio/film/the-fall-guy-2024/",
+    "watchDate": "2025-08-30T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/6/6/7/5/5/0/667550-the-fall-guy-0-600-0-900-crop.jpg?v=5f491a1281",
+    "rating": 3.5
+  },
+  {
     "title": "The Man Who Bought The Moon",
     "link": "https://letterboxd.com/gianvittorio/film/the-man-who-bought-the-moon/",
     "watchDate": "2025-08-23T00:00:00.000Z",
@@ -68,19 +82,5 @@
     "watchDate": "2025-07-13T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/9/1/3/2/5/8/913258-a-real-pain-0-600-0-900-crop.jpg?v=893a943872",
     "rating": 2
-  },
-  {
-    "title": "Nosferatu",
-    "link": "https://letterboxd.com/gianvittorio/film/nosferatu-2024/",
-    "watchDate": "2025-07-13T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/3/5/9/5/0/5/359505-nosferatu-2024-0-600-0-900-crop.jpg?v=a12d4ad648",
-    "rating": 4.5
-  },
-  {
-    "title": "The Apprentice",
-    "link": "https://letterboxd.com/gianvittorio/film/the-apprentice-2024/",
-    "watchDate": "2025-07-03T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/sm/upload/yj/8m/d9/4r/apprentice_xxlg-0-600-0-900-crop.jpg?v=684581b66b",
-    "rating": 3
   }
 ]
