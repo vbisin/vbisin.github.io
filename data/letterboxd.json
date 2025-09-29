@@ -1,5 +1,12 @@
 [
   {
+    "title": "Riefenstahl",
+    "link": "https://letterboxd.com/gianvittorio/film/riefenstahl/",
+    "watchDate": "2025-09-28T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/9/7/4/5/1/9/974519-riefenstahl-0-600-0-900-crop.jpg?v=8f48d78fd6",
+    "rating": 3.5
+  },
+  {
     "title": "Caught Stealing",
     "link": "https://letterboxd.com/gianvittorio/film/caught-stealing/",
     "watchDate": "2025-09-21T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2025-08-08T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/3/9/3/8/6/39386-in-the-loop-0-600-0-900-crop.jpg?v=6f0853d247",
     "rating": 4
-  },
-  {
-    "title": "Hunger",
-    "link": "https://letterboxd.com/gianvittorio/film/hunger/",
-    "watchDate": "2025-08-08T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/sm/upload/4j/78/8b/43/vgy1KZe6trb6Ul2OZAdw2DcW38D-0-600-0-900-crop.jpg?v=1de7d32b89",
-    "rating": 5
   }
 ]
