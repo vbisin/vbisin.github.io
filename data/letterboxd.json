@@ -1,5 +1,12 @@
 [
   {
+    "title": "Gomorrah",
+    "link": "https://letterboxd.com/gianvittorio/film/gomorrah/",
+    "watchDate": "2025-10-04T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/4/7/5/4/2/47542-gomorrah-0-600-0-900-crop.jpg?v=c0ec32062f",
+    "rating": 4.5
+  },
+  {
     "title": "Into the Abyss",
     "link": "https://letterboxd.com/gianvittorio/film/into-the-abyss/1/",
     "watchDate": "2025-10-03T00:00:00.000Z",
@@ -74,13 +81,6 @@
     "link": "https://letterboxd.com/gianvittorio/film/the-man-who-bought-the-moon/",
     "watchDate": "2025-08-23T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/4/9/8/1/7/3/498173-the-man-who-bought-the-moon-0-600-0-900-crop.jpg?v=5df9079d98",
-    "rating": 3.5
-  },
-  {
-    "title": "The Price of Nonna's Inheritance",
-    "link": "https://letterboxd.com/gianvittorio/film/the-price-of-nonnas-inheritance/",
-    "watchDate": "2025-08-19T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/0/6/2/2/1/0/1062210-the-price-of-nonna-s-inheritance-0-600-0-900-crop.jpg?v=1278639748",
     "rating": 3.5
   }
 ]
