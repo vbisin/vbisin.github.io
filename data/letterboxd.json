@@ -1,5 +1,12 @@
 [
   {
+    "title": "Vermiglio",
+    "link": "https://letterboxd.com/gianvittorio/film/vermiglio/",
+    "watchDate": "2025-10-18T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/0/3/7/7/4/2/1037742-vermiglio-0-600-0-900-crop.jpg?v=bcb16289ab",
+    "rating": 4
+  },
+  {
     "title": "A Breath of Fresh Air",
     "link": "https://letterboxd.com/gianvittorio/film/a-breath-of-fresh-air/",
     "watchDate": "2025-10-05T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2025-08-30T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/7/8/8/8/1/1/788811-fire-0-600-0-900-crop.jpg?v=b8bb00d24d",
     "rating": 2
-  },
-  {
-    "title": "The Fall Guy",
-    "link": "https://letterboxd.com/gianvittorio/film/the-fall-guy-2024/",
-    "watchDate": "2025-08-30T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/6/6/7/5/5/0/667550-the-fall-guy-0-600-0-900-crop.jpg?v=5f491a1281",
-    "rating": 3.5
   }
 ]
