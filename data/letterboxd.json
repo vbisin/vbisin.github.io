@@ -1,5 +1,12 @@
 [
   {
+    "title": "One Battle After Another",
+    "link": "https://letterboxd.com/gianvittorio/film/one-battle-after-another/",
+    "watchDate": "2025-10-26T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/9/5/1/2/7/7/951277-one-battle-after-another-0-600-0-900-crop.jpg?v=d27c4cc662",
+    "rating": 0
+  },
+  {
     "title": "Baby Boom",
     "link": "https://letterboxd.com/gianvittorio/film/baby-boom/",
     "watchDate": "2025-10-24T00:00:00.000Z",
@@ -74,13 +81,6 @@
     "link": "https://letterboxd.com/gianvittorio/film/before-sunrise/",
     "watchDate": "2025-09-08T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/5/1/9/7/4/51974-before-sunrise-0-600-0-900-crop.jpg?v=006e8fedea",
-    "rating": 0
-  },
-  {
-    "title": "Before Sunset",
-    "link": "https://letterboxd.com/gianvittorio/film/before-sunset/",
-    "watchDate": "2025-09-08T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/5/1/9/7/0/51970-before-sunset-0-600-0-900-crop.jpg?v=059bc2bbc0",
     "rating": 0
   }
 ]
