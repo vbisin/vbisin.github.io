@@ -1,5 +1,12 @@
 [
   {
+    "title": "Bugonia",
+    "link": "https://letterboxd.com/gianvittorio/film/bugonia/",
+    "watchDate": "2025-11-07T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/6/2/5/4/0/0/625400-bugonia-0-600-0-900-crop.jpg?v=4c6649150e",
+    "rating": 4.5
+  },
+  {
     "title": "The Death of Stalin",
     "link": "https://letterboxd.com/gianvittorio/film/the-death-of-stalin/1/",
     "watchDate": "2025-10-27T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2025-09-21T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/1/2/9/1/9/9/1129199-caught-stealing-0-600-0-900-crop.jpg?v=c64e11436b",
     "rating": 4
-  },
-  {
-    "title": "Game Night",
-    "link": "https://letterboxd.com/gianvittorio/film/game-night/",
-    "watchDate": "2025-09-08T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/3/7/8/0/4/8/378048-game-night-0-600-0-900-crop.jpg?v=7216b8d79c",
-    "rating": 3
   }
 ]
