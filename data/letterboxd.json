@@ -1,5 +1,12 @@
 [
   {
+    "title": "Silence",
+    "link": "https://letterboxd.com/gianvittorio/film/silence/",
+    "watchDate": "2025-11-29T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/5/2/5/0/4/52504-silence-0-600-0-900-crop.jpg?v=b1740fd4a3",
+    "rating": 4
+  },
+  {
     "title": "The Report",
     "link": "https://letterboxd.com/gianvittorio/film/the-report-2019/",
     "watchDate": "2025-11-28T00:00:00.000Z",
@@ -74,13 +81,6 @@
     "link": "https://letterboxd.com/gianvittorio/film/into-the-abyss/1/",
     "watchDate": "2025-10-03T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/6/3/8/1/2/63812-into-the-abyss-0-600-0-900-crop.jpg?v=9881d5f443",
-    "rating": 5
-  },
-  {
-    "title": "Jiro Dreams of Sushi",
-    "link": "https://letterboxd.com/gianvittorio/film/jiro-dreams-of-sushi/",
-    "watchDate": "2025-10-03T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/6/7/1/9/5/67195-jiro-dreams-of-sushi-0-600-0-900-crop.jpg?v=5369c1791c",
     "rating": 5
   }
 ]
