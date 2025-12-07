@@ -1,5 +1,12 @@
 [
   {
+    "title": "After the Hunt",
+    "link": "https://letterboxd.com/gianvittorio/film/after-the-hunt-2025/",
+    "watchDate": "2025-12-06T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/1/4/9/1/4/0/1149140-after-the-hunt-2025-0-600-0-900-crop.jpg?v=8a38a79f2c",
+    "rating": 2.5
+  },
+  {
     "title": "Silence",
     "link": "https://letterboxd.com/gianvittorio/film/silence/",
     "watchDate": "2025-11-29T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2025-10-04T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/4/7/5/4/2/47542-gomorrah-0-600-0-900-crop.jpg?v=c0ec32062f",
     "rating": 4.5
-  },
-  {
-    "title": "Into the Abyss",
-    "link": "https://letterboxd.com/gianvittorio/film/into-the-abyss/1/",
-    "watchDate": "2025-10-03T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/6/3/8/1/2/63812-into-the-abyss-0-600-0-900-crop.jpg?v=9881d5f443",
-    "rating": 5
   }
 ]
