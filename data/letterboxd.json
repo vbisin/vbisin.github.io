@@ -1,5 +1,12 @@
 [
   {
+    "title": "Man on Wire",
+    "link": "https://letterboxd.com/gianvittorio/film/man-on-wire/",
+    "watchDate": "2025-12-13T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/sm/upload/n1/1d/mw/4k/86kXY7u0HWSIK27RqRnu4r0cADz-0-600-0-900-crop.jpg?v=935449e2cb",
+    "rating": 0
+  },
+  {
     "title": "After the Hunt",
     "link": "https://letterboxd.com/gianvittorio/film/after-the-hunt-2025/",
     "watchDate": "2025-12-06T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2025-10-05T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/8/7/3/5/3/9/873539-a-breath-of-fresh-air-0-600-0-900-crop.jpg?v=34bb98e4a3",
     "rating": 2
-  },
-  {
-    "title": "Gomorrah",
-    "link": "https://letterboxd.com/gianvittorio/film/gomorrah/",
-    "watchDate": "2025-10-04T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/4/7/5/4/2/47542-gomorrah-0-600-0-900-crop.jpg?v=c0ec32062f",
-    "rating": 4.5
   }
 ]
