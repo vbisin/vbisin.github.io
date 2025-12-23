@@ -1,5 +1,12 @@
 [
   {
+    "title": "Black Mass",
+    "link": "https://letterboxd.com/gianvittorio/film/black-mass-2015/",
+    "watchDate": "2025-12-23T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/8/4/5/2/6/184526-black-mass-0-600-0-900-crop.jpg?v=23a1f6cd61",
+    "rating": 3.5
+  },
+  {
     "title": "Man on Wire",
     "link": "https://letterboxd.com/gianvittorio/film/man-on-wire/",
     "watchDate": "2025-12-13T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2025-10-18T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/0/3/7/7/4/2/1037742-vermiglio-0-600-0-900-crop.jpg?v=bcb16289ab",
     "rating": 4
-  },
-  {
-    "title": "A Breath of Fresh Air",
-    "link": "https://letterboxd.com/gianvittorio/film/a-breath-of-fresh-air/",
-    "watchDate": "2025-10-05T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/8/7/3/5/3/9/873539-a-breath-of-fresh-air-0-600-0-900-crop.jpg?v=34bb98e4a3",
-    "rating": 2
   }
 ]
