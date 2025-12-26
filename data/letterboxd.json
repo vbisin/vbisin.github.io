@@ -1,5 +1,12 @@
 [
   {
+    "title": "I Am the End of the World",
+    "link": "https://letterboxd.com/gianvittorio/film/i-am-the-end-of-the-world/",
+    "watchDate": "2025-12-25T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/2/7/1/7/8/4/1271784-io-sono-la-fine-del-mondo-0-600-0-900-crop.jpg?v=b466c73f2d",
+    "rating": 1
+  },
+  {
     "title": "Black Mass",
     "link": "https://letterboxd.com/gianvittorio/film/black-mass-2015/",
     "watchDate": "2025-12-23T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2025-10-24T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/4/5/4/9/4/45494-baby-boom-0-600-0-900-crop.jpg?v=d65d21de80",
     "rating": 3
-  },
-  {
-    "title": "Vermiglio",
-    "link": "https://letterboxd.com/gianvittorio/film/vermiglio/",
-    "watchDate": "2025-10-18T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/0/3/7/7/4/2/1037742-vermiglio-0-600-0-900-crop.jpg?v=bcb16289ab",
-    "rating": 4
   }
 ]
