@@ -1,10 +1,17 @@
 [
   {
+    "title": "The Price of Family",
+    "link": "https://letterboxd.com/gianvittorio/film/the-price-of-family/",
+    "watchDate": "2025-12-26T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/9/0/1/7/4/5/901745-the-price-of-family-0-600-0-900-crop.jpg?v=e36e8c2c6e",
+    "rating": 3
+  },
+  {
     "title": "I Am the End of the World",
     "link": "https://letterboxd.com/gianvittorio/film/i-am-the-end-of-the-world/",
     "watchDate": "2025-12-25T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/2/7/1/7/8/4/1271784-io-sono-la-fine-del-mondo-0-600-0-900-crop.jpg?v=b466c73f2d",
-    "rating": 1
+    "rating": 2
   },
   {
     "title": "Black Mass",
@@ -74,13 +81,6 @@
     "link": "https://letterboxd.com/gianvittorio/film/one-battle-after-another/",
     "watchDate": "2025-10-26T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/9/5/1/2/7/7/951277-one-battle-after-another-0-600-0-900-crop.jpg?v=d27c4cc662",
-    "rating": 3
-  },
-  {
-    "title": "Baby Boom",
-    "link": "https://letterboxd.com/gianvittorio/film/baby-boom/",
-    "watchDate": "2025-10-24T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/4/5/4/9/4/45494-baby-boom-0-600-0-900-crop.jpg?v=d65d21de80",
     "rating": 3
   }
 ]
