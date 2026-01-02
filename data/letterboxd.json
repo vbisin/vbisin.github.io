@@ -1,5 +1,12 @@
 [
   {
+    "title": "Buen Camino",
+    "link": "https://letterboxd.com/gianvittorio/film/buen-camino-2025/",
+    "watchDate": "2026-01-01T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/3/4/9/8/0/0/1349800-buen-camino-2025-0-600-0-900-crop.jpg?v=4a6a077201",
+    "rating": 3.5
+  },
+  {
     "title": "Three Men and a Leg",
     "link": "https://letterboxd.com/gianvittorio/film/three-men-and-a-leg/",
     "watchDate": "2025-12-27T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2025-11-16T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/0/1/3/3/5/7/1013357-sentimental-value-2025-0-600-0-900-crop.jpg?v=e89e64a309",
     "rating": 4
-  },
-  {
-    "title": "Bugonia",
-    "link": "https://letterboxd.com/gianvittorio/film/bugonia/",
-    "watchDate": "2025-11-07T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/6/2/5/4/0/0/625400-bugonia-0-600-0-900-crop.jpg?v=4c6649150e",
-    "rating": 5
   }
 ]
