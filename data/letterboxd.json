@@ -1,5 +1,26 @@
 [
   {
+    "title": "Sinners",
+    "link": "https://letterboxd.com/gianvittorio/film/sinners-2025/",
+    "watchDate": "2026-01-05T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/1/1/6/6/0/0/1116600-sinners-2025-0-600-0-900-crop.jpg?v=5996b7d555",
+    "rating": 2
+  },
+  {
+    "title": "My Week with Marilyn",
+    "link": "https://letterboxd.com/gianvittorio/film/my-week-with-marilyn/",
+    "watchDate": "2026-01-05T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/sm/upload/nm/3x/f6/hu/marilyn-0-600-0-900-crop.jpg?v=6015be61ca",
+    "rating": 3.5
+  },
+  {
+    "title": "House of Gucci",
+    "link": "https://letterboxd.com/gianvittorio/film/house-of-gucci/",
+    "watchDate": "2026-01-05T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/5/7/0/1/9/3/570193-house-of-gucci-0-600-0-900-crop.jpg?v=5360fe0784",
+    "rating": 3.5
+  },
+  {
     "title": "Buen Camino",
     "link": "https://letterboxd.com/gianvittorio/film/buen-camino-2025/",
     "watchDate": "2026-01-01T00:00:00.000Z",
@@ -61,26 +82,5 @@
     "watchDate": "2025-11-29T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/5/2/5/0/4/52504-silence-0-600-0-900-crop.jpg?v=b1740fd4a3",
     "rating": 4.5
-  },
-  {
-    "title": "The Report",
-    "link": "https://letterboxd.com/gianvittorio/film/the-report-2019/",
-    "watchDate": "2025-11-28T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/sm/upload/ed/fb/tl/4n/sG5NI6TMNR9ftOdTIXmG0hrBYSY-0-600-0-900-crop.jpg?v=ca2876ec71",
-    "rating": 3.5
-  },
-  {
-    "title": "Dogville",
-    "link": "https://letterboxd.com/gianvittorio/film/dogville/",
-    "watchDate": "2025-11-27T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/sm/upload/rj/sn/o2/md/5U7mo8mMVNoVVF1I0YDLxvaGrXv-0-600-0-900-crop.jpg?v=1f4e9e34e4",
-    "rating": 5
-  },
-  {
-    "title": "Sentimental Value",
-    "link": "https://letterboxd.com/gianvittorio/film/sentimental-value-2025/",
-    "watchDate": "2025-11-16T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/0/1/3/3/5/7/1013357-sentimental-value-2025-0-600-0-900-crop.jpg?v=e89e64a309",
-    "rating": 4
   }
 ]
