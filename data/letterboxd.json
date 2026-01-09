@@ -1,5 +1,12 @@
 [
   {
+    "title": "Marty Supreme",
+    "link": "https://letterboxd.com/gianvittorio/film/marty-supreme/",
+    "watchDate": "2026-01-08T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/1/9/7/4/9/9/1197499-marty-supreme-0-600-0-900-crop.jpg?v=b14a26bb43",
+    "rating": 4.5
+  },
+  {
     "title": "Sinners",
     "link": "https://letterboxd.com/gianvittorio/film/sinners-2025/",
     "watchDate": "2026-01-05T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2025-12-06T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/1/4/9/1/4/0/1149140-after-the-hunt-2025-0-600-0-900-crop.jpg?v=8a38a79f2c",
     "rating": 2.5
-  },
-  {
-    "title": "Silence",
-    "link": "https://letterboxd.com/gianvittorio/film/silence/",
-    "watchDate": "2025-11-29T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/5/2/5/0/4/52504-silence-0-600-0-900-crop.jpg?v=b1740fd4a3",
-    "rating": 4.5
   }
 ]
