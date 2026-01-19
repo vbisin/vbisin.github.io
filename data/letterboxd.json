@@ -1,5 +1,12 @@
 [
   {
+    "title": "Magellan",
+    "link": "https://letterboxd.com/gianvittorio/film/magellan-2025/",
+    "watchDate": "2026-01-18T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/8/7/7/9/3/1/877931-magellan-2025-0-600-0-900-crop.jpg?v=a5e6c9397b",
+    "rating": 4
+  },
+  {
     "title": "Black Beach/White Beach",
     "link": "https://letterboxd.com/gianvittorio/film/black-beach-white-beach/",
     "watchDate": "2026-01-16T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2025-12-23T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/8/4/5/2/6/184526-black-mass-0-600-0-900-crop.jpg?v=23a1f6cd61",
     "rating": 3.5
-  },
-  {
-    "title": "Man on Wire",
-    "link": "https://letterboxd.com/gianvittorio/film/man-on-wire/",
-    "watchDate": "2025-12-13T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/sm/upload/n1/1d/mw/4k/86kXY7u0HWSIK27RqRnu4r0cADz-0-600-0-900-crop.jpg?v=935449e2cb",
-    "rating": 0
   }
 ]
