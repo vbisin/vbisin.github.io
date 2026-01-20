@@ -1,5 +1,12 @@
 [
   {
+    "title": "Il Divo",
+    "link": "https://letterboxd.com/gianvittorio/film/il-divo/1/",
+    "watchDate": "2026-01-19T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/4/7/5/8/9/47589-il-divo-0-600-0-900-crop.jpg?v=bcc2bf801c",
+    "rating": 4.5
+  },
+  {
     "title": "Magellan",
     "link": "https://letterboxd.com/gianvittorio/film/magellan-2025/",
     "watchDate": "2026-01-18T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2025-12-25T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/2/7/1/7/8/4/1271784-io-sono-la-fine-del-mondo-0-600-0-900-crop.jpg?v=b466c73f2d",
     "rating": 2
-  },
-  {
-    "title": "Black Mass",
-    "link": "https://letterboxd.com/gianvittorio/film/black-mass-2015/",
-    "watchDate": "2025-12-23T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/8/4/5/2/6/184526-black-mass-0-600-0-900-crop.jpg?v=23a1f6cd61",
-    "rating": 3.5
   }
 ]
