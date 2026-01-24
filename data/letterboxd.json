@@ -1,5 +1,12 @@
 [
   {
+    "title": "The Machinist",
+    "link": "https://letterboxd.com/gianvittorio/film/the-machinist/",
+    "watchDate": "2026-01-23T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/4/9/2/5/4/49254-the-machinist-0-600-0-900-crop.jpg?v=71a9922e95",
+    "rating": 2
+  },
+  {
     "title": "Il Divo",
     "link": "https://letterboxd.com/gianvittorio/film/il-divo/1/",
     "watchDate": "2026-01-19T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2025-12-26T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/9/0/1/7/4/5/901745-the-price-of-family-0-600-0-900-crop.jpg?v=e36e8c2c6e",
     "rating": 3
-  },
-  {
-    "title": "I Am the End of the World",
-    "link": "https://letterboxd.com/gianvittorio/film/i-am-the-end-of-the-world/",
-    "watchDate": "2025-12-25T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/2/7/1/7/8/4/1271784-io-sono-la-fine-del-mondo-0-600-0-900-crop.jpg?v=b466c73f2d",
-    "rating": 2
   }
 ]
