@@ -1,5 +1,12 @@
 [
   {
+    "title": "Call Me by Your Name",
+    "link": "https://letterboxd.com/gianvittorio/film/call-me-by-your-name/",
+    "watchDate": "2026-01-31T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/sm/upload/g9/9t/cc/7u/tcNniniS4rfqrLH0oORikJfnIwY-0-600-0-900-crop.jpg?v=f0c073f2b4",
+    "rating": 2.5
+  },
+  {
     "title": "Navalny",
     "link": "https://letterboxd.com/gianvittorio/film/navalny/",
     "watchDate": "2026-01-24T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2025-12-27T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/2/6/2/7/1/26271-three-men-and-a-leg-0-600-0-900-crop.jpg?v=de4f56c32d",
     "rating": 4.5
-  },
-  {
-    "title": "Where Am I Going?",
-    "link": "https://letterboxd.com/gianvittorio/film/where-am-i-going-2016/1/",
-    "watchDate": "2025-12-27T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/3/0/9/9/9/6/309996-where-am-i-going--0-600-0-900-crop.jpg?v=a5dd249f73",
-    "rating": 5
   }
 ]
