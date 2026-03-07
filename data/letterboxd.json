@@ -1,5 +1,12 @@
 [
   {
+    "title": "Fear and Loathing in Las Vegas",
+    "link": "https://letterboxd.com/gianvittorio/film/fear-and-loathing-in-las-vegas/",
+    "watchDate": "2026-03-06T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/5/0/7/2/5/50725-fear-and-loathing-in-las-vegas-0-600-0-900-crop.jpg?v=ff824b403c",
+    "rating": 0
+  },
+  {
     "title": "Limonov: The Ballad",
     "link": "https://letterboxd.com/gianvittorio/film/limonov-the-ballad/",
     "watchDate": "2026-02-12T00:00:00.000Z",
@@ -74,13 +81,6 @@
     "link": "https://letterboxd.com/gianvittorio/film/my-week-with-marilyn/",
     "watchDate": "2026-01-05T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/sm/upload/nm/3x/f6/hu/marilyn-0-600-0-900-crop.jpg?v=6015be61ca",
-    "rating": 3.5
-  },
-  {
-    "title": "House of Gucci",
-    "link": "https://letterboxd.com/gianvittorio/film/house-of-gucci/",
-    "watchDate": "2026-01-05T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/5/7/0/1/9/3/570193-house-of-gucci-0-600-0-900-crop.jpg?v=5360fe0784",
     "rating": 3.5
   }
 ]
