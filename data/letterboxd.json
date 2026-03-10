@@ -1,5 +1,12 @@
 [
   {
+    "title": "The Dinosaurs",
+    "link": "https://letterboxd.com/gianvittorio/film/the-dinosaurs-2026/",
+    "watchDate": "2026-03-09T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/5/1/1/2/8/9/1511289-the-dinosaurs-2026-0-600-0-900-crop.jpg?v=dd836b74ab",
+    "rating": 0
+  },
+  {
     "title": "Fear and Loathing in Las Vegas",
     "link": "https://letterboxd.com/gianvittorio/film/fear-and-loathing-in-las-vegas/",
     "watchDate": "2026-03-06T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2026-01-05T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/1/1/6/6/0/0/1116600-sinners-2025-0-600-0-900-crop.jpg?v=5996b7d555",
     "rating": 2
-  },
-  {
-    "title": "My Week with Marilyn",
-    "link": "https://letterboxd.com/gianvittorio/film/my-week-with-marilyn/",
-    "watchDate": "2026-01-05T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/sm/upload/nm/3x/f6/hu/marilyn-0-600-0-900-crop.jpg?v=6015be61ca",
-    "rating": 3.5
   }
 ]
