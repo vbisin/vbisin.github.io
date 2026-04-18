@@ -1,5 +1,12 @@
 [
   {
+    "title": "Donbass",
+    "link": "https://letterboxd.com/gianvittorio/film/donbass/",
+    "watchDate": "2026-04-17T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/4/4/8/7/0/8/448708-donbass-0-600-0-900-crop.jpg?v=3881d44e2a",
+    "rating": 2.5
+  },
+  {
     "title": "Mr. Nobody Against Putin",
     "link": "https://letterboxd.com/gianvittorio/film/mr-nobody-against-putin/",
     "watchDate": "2026-03-23T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2026-01-19T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/4/7/5/8/9/47589-il-divo-0-600-0-900-crop.jpg?v=bcc2bf801c",
     "rating": 4.5
-  },
-  {
-    "title": "Magellan",
-    "link": "https://letterboxd.com/gianvittorio/film/magellan-2025/",
-    "watchDate": "2026-01-18T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/8/7/7/9/3/1/877931-magellan-2025-0-600-0-900-crop.jpg?v=a5e6c9397b",
-    "rating": 4
   }
 ]
