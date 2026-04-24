@@ -1,5 +1,12 @@
 [
   {
+    "title": "Fiume o Morte!",
+    "link": "https://letterboxd.com/gianvittorio/film/fiume-o-morte/",
+    "watchDate": "2026-04-23T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/2/8/6/8/2/0/1286820-fiume-o-morte-0-600-0-900-crop.jpg?v=955c291f95",
+    "rating": 4
+  },
+  {
     "title": "Sirāt",
     "link": "https://letterboxd.com/gianvittorio/film/sirat-2025/",
     "watchDate": "2026-04-18T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2026-01-24T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/8/3/2/2/4/0/832240-navalny-0-600-0-900-crop.jpg?v=946c2fcfd7",
     "rating": 4.5
-  },
-  {
-    "title": "The Machinist",
-    "link": "https://letterboxd.com/gianvittorio/film/the-machinist/",
-    "watchDate": "2026-01-23T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/4/9/2/5/4/49254-the-machinist-0-600-0-900-crop.jpg?v=71a9922e95",
-    "rating": 2
   }
 ]
