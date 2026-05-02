@@ -1,5 +1,12 @@
 [
   {
+    "title": "The Last One for the Road",
+    "link": "https://letterboxd.com/gianvittorio/film/the-last-one-for-the-road/",
+    "watchDate": "2026-05-01T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/3/3/9/0/6/3/1339063-the-last-one-for-the-road-0-600-0-900-crop.jpg?v=09060ee38b",
+    "rating": 4
+  },
+  {
     "title": "Fiume o Morte!",
     "link": "https://letterboxd.com/gianvittorio/film/fiume-o-morte/",
     "watchDate": "2026-04-23T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2026-01-31T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/sm/upload/g9/9t/cc/7u/tcNniniS4rfqrLH0oORikJfnIwY-0-600-0-900-crop.jpg?v=f0c073f2b4",
     "rating": 2.5
-  },
-  {
-    "title": "Navalny",
-    "link": "https://letterboxd.com/gianvittorio/film/navalny/",
-    "watchDate": "2026-01-24T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/8/3/2/2/4/0/832240-navalny-0-600-0-900-crop.jpg?v=946c2fcfd7",
-    "rating": 4.5
   }
 ]
