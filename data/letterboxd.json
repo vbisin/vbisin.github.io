@@ -1,5 +1,12 @@
 [
   {
+    "title": "The Phoenician Scheme",
+    "link": "https://letterboxd.com/gianvittorio/film/the-phoenician-scheme/",
+    "watchDate": "2026-05-16T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/0/2/5/0/4/7/1025047-the-phoenician-scheme-0-600-0-900-crop.jpg?v=606059b69f",
+    "rating": 4
+  },
+  {
     "title": "The Last One for the Road",
     "link": "https://letterboxd.com/gianvittorio/film/the-last-one-for-the-road/",
     "watchDate": "2026-05-01T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2026-02-01T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/1/0/4/3/4/8/1104348-the-secret-agent-2025-0-600-0-900-crop.jpg?v=3bcd2a3e02",
     "rating": 4
-  },
-  {
-    "title": "Call Me by Your Name",
-    "link": "https://letterboxd.com/gianvittorio/film/call-me-by-your-name/",
-    "watchDate": "2026-01-31T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/sm/upload/g9/9t/cc/7u/tcNniniS4rfqrLH0oORikJfnIwY-0-600-0-900-crop.jpg?v=f0c073f2b4",
-    "rating": 2.5
   }
 ]
