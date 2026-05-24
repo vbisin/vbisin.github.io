@@ -1,5 +1,12 @@
 [
   {
+    "title": "A House of Dynamite",
+    "link": "https://letterboxd.com/gianvittorio/film/a-house-of-dynamite/",
+    "watchDate": "2026-05-24T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/1/7/2/7/8/7/1172787-a-house-of-dynamite-0-600-0-900-crop.jpg?v=9013364dac",
+    "rating": 3.5
+  },
+  {
     "title": "The Phoenician Scheme",
     "link": "https://letterboxd.com/gianvittorio/film/the-phoenician-scheme/",
     "watchDate": "2026-05-16T00:00:00.000Z",
@@ -74,13 +81,6 @@
     "link": "https://letterboxd.com/gianvittorio/film/limonov-the-ballad/",
     "watchDate": "2026-02-12T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/4/2/5/5/1/6/425516-limonov-the-ballad-0-600-0-900-crop.jpg?v=b6f6c96c96",
-    "rating": 4
-  },
-  {
-    "title": "The Secret Agent",
-    "link": "https://letterboxd.com/gianvittorio/film/the-secret-agent-2025/",
-    "watchDate": "2026-02-01T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/1/0/4/3/4/8/1104348-the-secret-agent-2025-0-600-0-900-crop.jpg?v=3bcd2a3e02",
     "rating": 4
   }
 ]
