@@ -1,5 +1,12 @@
 [
   {
+    "title": "Mexico 86",
+    "link": "https://letterboxd.com/gianvittorio/film/mexico-86-2026/",
+    "watchDate": "2026-06-06T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/4/0/5/7/2/8/1405728-mexico-86-2026-0-600-0-900-crop.jpg?v=eb421d9372",
+    "rating": 3.5
+  },
+  {
     "title": "My Tennis Maestro",
     "link": "https://letterboxd.com/gianvittorio/film/my-tennis-maestro/",
     "watchDate": "2026-05-30T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2026-03-09T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/5/1/1/2/8/9/1511289-the-dinosaurs-2026-0-600-0-900-crop.jpg?v=dd836b74ab",
     "rating": 4.5
-  },
-  {
-    "title": "Fear and Loathing in Las Vegas",
-    "link": "https://letterboxd.com/gianvittorio/film/fear-and-loathing-in-las-vegas/",
-    "watchDate": "2026-03-06T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/5/0/7/2/5/50725-fear-and-loathing-in-las-vegas-0-600-0-900-crop.jpg?v=ff824b403c",
-    "rating": 0
   }
 ]
