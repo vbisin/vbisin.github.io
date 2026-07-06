@@ -1,5 +1,19 @@
 [
   {
+    "title": "Senna",
+    "link": "https://letterboxd.com/gianvittorio/film/senna/",
+    "watchDate": "2026-07-05T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/sm/upload/8u/d6/31/8h/wnC4TllSy7SY16wzPH42mczz97w-0-600-0-900-crop.jpg?v=417366e017",
+    "rating": 4
+  },
+  {
+    "title": "War Horse",
+    "link": "https://letterboxd.com/gianvittorio/film/war-horse/",
+    "watchDate": "2026-07-05T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/sm/upload/tm/go/ln/tz/tKuBbV3TMnUWgvIlHKeKLfhPTJB-0-600-0-900-crop.jpg?v=47a006e826",
+    "rating": 2
+  },
+  {
     "title": "Mexico 86",
     "link": "https://letterboxd.com/gianvittorio/film/mexico-86-2026/",
     "watchDate": "2026-06-06T00:00:00.000Z",
@@ -68,19 +82,5 @@
     "watchDate": "2026-03-14T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/3/3/3/4/9/8/1333498-it-was-just-an-accident-0-600-0-900-crop.jpg?v=d1e92cf746",
     "rating": 5
-  },
-  {
-    "title": "The Name of the Rose",
-    "link": "https://letterboxd.com/gianvittorio/film/the-name-of-the-rose/",
-    "watchDate": "2026-03-13T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/sm/upload/40/ey/ej/uf/5o8ReHWpFR4kl7JgrBeq3OYpFqp-0-600-0-900-crop.jpg?v=16e79dedab",
-    "rating": 5
-  },
-  {
-    "title": "The Dinosaurs",
-    "link": "https://letterboxd.com/gianvittorio/film/the-dinosaurs-2026/",
-    "watchDate": "2026-03-09T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/5/1/1/2/8/9/1511289-the-dinosaurs-2026-0-600-0-900-crop.jpg?v=dd836b74ab",
-    "rating": 4.5
   }
 ]
