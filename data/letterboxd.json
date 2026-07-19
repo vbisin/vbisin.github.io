@@ -1,5 +1,12 @@
 [
   {
+    "title": "The Kidnapping of Arabella",
+    "link": "https://letterboxd.com/gianvittorio/film/the-kidnapping-of-arabella/",
+    "watchDate": "2026-07-18T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/2/3/4/4/1/3/1234413-the-kidnapping-of-arabella-0-600-0-900-crop.jpg?v=ac3674ff58",
+    "rating": 3
+  },
+  {
     "title": "The Odyssey",
     "link": "https://letterboxd.com/gianvittorio/film/the-odyssey-2026/",
     "watchDate": "2026-07-16T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2026-04-17T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/4/4/8/7/0/8/448708-donbass-0-600-0-900-crop.jpg?v=3881d44e2a",
     "rating": 2.5
-  },
-  {
-    "title": "Mr. Nobody Against Putin",
-    "link": "https://letterboxd.com/gianvittorio/film/mr-nobody-against-putin/",
-    "watchDate": "2026-03-23T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/2/7/7/5/4/5/1277545-mr-nobody-against-putin-0-600-0-900-crop.jpg?v=e15d911787",
-    "rating": 4
   }
 ]
