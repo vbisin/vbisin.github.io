@@ -20,7 +20,7 @@ A simple static website with a minimalist design.
 ├── index.html          # Homepage
 ├── about.html          # About page
 ├── travel.html         # Travel photo gallery
-├── juve_merda.html     # Juventus sticker page
+├── juventus.html       # Juventus sticker page
 ├── images/             # Photo directory
 │   └── [year]/[country]/[city]/  # Organized travel photos
 ```

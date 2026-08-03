@@ -156,30 +156,45 @@
         .social-icon-blue:hover {
             transform: scale(1.1);
         }
-        .contents-box {
-            position: fixed;
-            top: 150px;
-            left: calc(75% + 30px);
-            transform: translateX(-50%);
-            background-color: #E6E6FA;
-            padding: 40px 60px;
-            text-align: left;
-            z-index: 100;
-        }
-
-        /* Add media query for mobile devices */
-        @media screen and (max-width: 768px) {
+        /* Desktop sidebar layout. .container is centered by the flex body
+           with a 640px max footprint (600px + 40px padding), so its right
+           edge always sits at 50vw + 320px. Anchoring the sidebar's left
+           edge to that same point (plus a fixed gap) guarantees the two
+           boxes can never overlap, at any viewport width in this range.
+           Only enabled once there's provably enough room (see the
+           min-width breakpoint below) for the sidebar to also stay fully
+           on-screen. */
+        @media screen and (min-width: 1240px) {
             .contents-box {
                 position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                transform: none;
-                padding: 15px;
+                top: 150px;
+                left: calc(50vw + 360px);
+                background-color: #E6E6FA;
+                padding: 40px 60px;
+                text-align: left;
+                z-index: 100;
+            }
+        }
+
+        /* Stacked layout for tablets and phones. Contents flows normally
+           in the document after the intro (its DOM position), instead of
+           being fixed on top of it, so visitors always see the name and
+           photo before the nav links. */
+        @media screen and (max-width: 1239px) {
+            body {
+                flex-direction: column;
+                padding: 40px 20px;
+            }
+
+            .contents-box {
+                position: static;
                 width: 100%;
+                max-width: 500px;
+                margin: 30px auto 0;
+                padding: 20px 15px;
                 box-sizing: border-box;
                 background-color: #E6E6FA;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                text-align: center;
             }
 
             .contents-box h3 {
@@ -189,16 +204,13 @@
 
             .contents-box ul {
                 display: flex;
-                justify-content: space-around;
+                justify-content: center;
                 flex-wrap: wrap;
+                gap: 8px 20px;
             }
 
             .contents-box li {
                 margin: 5px 10px;
-            }
-
-            .container {
-                margin-top: 120px; /* Add space below the fixed header */
             }
         }
 
@@ -272,7 +284,7 @@
             <li><a href="films.html">- film</a></li>
             <li><a href="playlists.html">- music</a></li>
             <li><a href="travel.html">- travel</a></li>
-            <li><a href="juve_merda.html">- juventus</a></li>
+            <li><a href="juventus.html">- juventus</a></li>
         </ul>
     </div>
 </body>
