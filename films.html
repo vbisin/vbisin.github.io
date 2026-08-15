@@ -61,42 +61,41 @@
         }
         .letterboxd-profile {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
         .letterboxd-preview {
-            display: block;
+            display: inline-block;
             text-decoration: none;
-            margin-top: 15px;
             transition: transform 0.2s ease;
         }
         .letterboxd-preview:hover {
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
         .letterboxd-card {
             display: flex;
             align-items: center;
             background-color: white;
-            border-radius: 12px;
-            padding: 12px 16px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            padding: 7px 12px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
             border: 1px solid #eaeaea;
-            max-width: 300px;
+            max-width: 200px;
             margin: 0 auto;
         }
         .letterboxd-avatar {
-            width: 45px;
-            height: 45px;
+            width: 30px;
+            height: 30px;
             background-color: #14181c;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 16px;
+            margin-right: 10px;
             flex-shrink: 0;
         }
         .letterboxd-logo {
-            width: 24px;
-            height: 24px;
+            width: 16px;
+            height: 16px;
         }
         .letterboxd-info {
             text-align: left;
@@ -104,12 +103,12 @@
         .letterboxd-username {
             font-weight: 600;
             color: #14181c;
-            font-size: 1.1em;
-            margin-bottom: 4px;
+            font-size: 0.9em;
+            margin-bottom: 1px;
         }
         .letterboxd-stats {
             color: #666;
-            font-size: 0.9em;
+            font-size: 0.72em;
         }
         h2 {
             text-align: center;
@@ -120,23 +119,23 @@
         }
         .films-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 16px;
             margin-top: 20px;
         }
         .film-card {
             background-color: white;
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
             display: flex;
             flex-direction: column;
             height: 100%;
         }
         .film-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
         }
         .film-poster {
             width: 100%;
@@ -150,29 +149,29 @@
             transition: transform 0.4s ease;
         }
         .film-card:hover .film-poster img {
-            transform: scale(1.03);
+            transform: scale(1.02);
         }
         .film-info {
-            padding: 15px;
+            padding: 10px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
         .film-title {
             font-weight: bold;
-            font-size: 1.05em;
-            margin-bottom: 8px;
+            font-size: 0.9em;
+            margin-bottom: 4px;
             color: #333333;
             line-height: 1.3;
         }
         .film-date {
             color: #777777;
-            font-size: 0.9em;
-            margin-bottom: 10px;
+            font-size: 0.75em;
+            margin-bottom: 6px;
         }
         .film-rating {
             margin-top: auto;
-            font-size: 1.1em;
+            font-size: 0.95em;
         }
         .rating-0-5, .rating-1, .rating-1-5, .rating-2 { color: #d17777; }
         .rating-2-5, .rating-3 { color: #e3b341; }
@@ -199,14 +198,14 @@
         
         @media (max-width: 768px) {
             .films-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-                gap: 15px;
+                grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+                gap: 10px;
             }
             .film-info {
-                padding: 12px;
+                padding: 8px;
             }
             .film-title {
-                font-size: 0.95em;
+                font-size: 0.8em;
             }
         }
     </style>
@@ -218,7 +217,6 @@
         <h1>Films</h1>
         
         <div class="letterboxd-profile">
-            <p>I keep track of my film watching on Letterboxd</p>
             <a href="https://letterboxd.com/gianvittorio/" target="_blank" class="letterboxd-preview">
                 <div class="letterboxd-card">
                     <div class="letterboxd-avatar">
