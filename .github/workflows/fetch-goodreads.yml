@@ -1,0 +1,45 @@
+name: Fetch Goodreads Data
+
+on:
+  schedule:
+    - cron: '30 */12 * * *'  # Run every 12 hours (offset from the Letterboxd fetch)
+  workflow_dispatch:  # Allow manual triggers
+
+jobs:
+  fetch-goodreads:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Explicit permission to write to repository
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm install axios xml2js
+
+      - name: Create data directory
+        run: mkdir -p data
+
+      - name: Fetch and process Goodreads data
+        run: node .github/scripts/fetch-goodreads.js
+
+      - name: Debug info
+        run: |
+          ls -la data/
+          cat data/goodreads.json || echo "File is empty or doesn't exist"
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git add data/goodreads.json
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update Goodreads data"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
