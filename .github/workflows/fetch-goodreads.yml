@@ -1,5 +1,4 @@
 name: Fetch Goodreads Data
-
 on:
   schedule:
     - cron: '30 */12 * * *'  # Run every 12 hours (offset from the Letterboxd fetch)
@@ -39,7 +38,26 @@ jobs:
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
           git add data/goodreads.json
-          git diff --quiet && git diff --staged --quiet || git commit -m "Update Goodreads data"
-          git push
+
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          git commit -m "Update Goodreads data"
+
+          # main can move between checkout and push (another workflow or a
+          # manual push landing at the same time) - rebase onto the latest
+          # main and retry a few times instead of failing on the first race.
+          for i in 1 2 3 4 5; do
+            if git pull --rebase origin main && git push; then
+              exit 0
+            fi
+            echo "Push attempt $i failed, retrying in 5s..."
+            sleep 5
+          done
+
+          echo "Failed to push after retries"
+          exit 1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
