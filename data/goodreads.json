@@ -1,1 +1,104 @@
-[]
+{
+  "currentlyReading": [
+    {
+      "title": "Mary",
+      "author": "Vladimir Nabokov",
+      "link": "https://www.goodreads.com/review/show/8861938209?utm_medium=api&utm_source=rss",
+      "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1657567885l/46323._SY475_.jpg",
+      "dateAdded": "2026-08-15T18:45:04.000Z"
+    },
+    {
+      "title": "Sergio Marchionne",
+      "author": "Tommaso Ebhardt",
+      "link": "https://www.goodreads.com/review/show/8862099873?utm_medium=api&utm_source=rss",
+      "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1556622993l/45415265._SX318_.jpg",
+      "dateAdded": "2026-08-15T18:44:51.000Z"
+    }
+  ],
+  "recentlyAdded": [
+    {
+      "title": "New Media in Art (World of Art)",
+      "author": "Michael Rush",
+      "link": "https://www.goodreads.com/review/show/8862033116?utm_medium=api&utm_source=rss",
+      "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348054802l/151638.jpg",
+      "dateAdded": "2026-08-15T18:16:27.000Z"
+    },
+    {
+      "title": "Bauhaus by Magdalena Droste (2015-07-29)",
+      "author": "Various",
+      "link": "https://www.goodreads.com/review/show/8862033030?utm_medium=api&utm_source=rss",
+      "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1699376475l/147896758._SX318_.jpg",
+      "dateAdded": "2026-08-15T18:16:25.000Z"
+    },
+    {
+      "title": "Summary & Study Guide Why Nations Fail by Daron Acemoğlu",
+      "author": "BookRags",
+      "link": "https://www.goodreads.com/review/show/8862032950?utm_medium=api&utm_source=rss",
+      "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1389359473l/20504648.jpg",
+      "dateAdded": "2026-08-15T18:16:23.000Z"
+    },
+    {
+      "title": "Fireforce by Chris Cocks (2009) Paperback",
+      "author": "Chris  Cocks",
+      "link": "https://www.goodreads.com/review/show/8862032850?utm_medium=api&utm_source=rss",
+      "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1694901918l/135648340._SY475_.jpg",
+      "dateAdded": "2026-08-15T18:16:21.000Z"
+    },
+    {
+      "title": "The Complete Art of War: The Art of War by Sun Tzu; On War by Carl von Clausewitz; The Art of War by Niccolò Machiavelli; The Art of War by Baron de Jomini",
+      "author": "Sun Tzu",
+      "link": "https://www.goodreads.com/review/show/8862032694?utm_medium=api&utm_source=rss",
+      "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1429543276l/24929176.jpg",
+      "dateAdded": "2026-08-15T18:16:17.000Z"
+    },
+    {
+      "title": "Art and Culture Critical Essays",
+      "author": "Clement Greenberg",
+      "link": "https://www.goodreads.com/review/show/8862032612?utm_medium=api&utm_source=rss",
+      "coverUrl": "https://s.gr-assets.com/assets/nophoto/book/111x148-675b3b2743c83e96e2540d2929d5f4d2.png",
+      "dateAdded": "2026-08-15T18:16:15.000Z"
+    },
+    {
+      "title": "On Walden Pond Henry David Thoreau: Walden Henry Thoreau",
+      "author": "Henry David Thoreau",
+      "link": "https://www.goodreads.com/review/show/8862032533?utm_medium=api&utm_source=rss",
+      "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1647729261l/60650297._SY475_.jpg",
+      "dateAdded": "2026-08-15T18:16:13.000Z"
+    },
+    {
+      "title": "Civil Disobedience and Other Essays by Henry David Thoreau (2016-04-21)",
+      "author": "Unknown Author",
+      "link": "https://www.goodreads.com/review/show/8862032453?utm_medium=api&utm_source=rss",
+      "coverUrl": "https://s.gr-assets.com/assets/nophoto/book/111x148-675b3b2743c83e96e2540d2929d5f4d2.png",
+      "dateAdded": "2026-08-15T18:16:11.000Z"
+    },
+    {
+      "title": "Summary of Say Nothing by Patrick Radden Keefe | A True Story of Murder and Memory in Northern Ireland",
+      "author": "CTPrint",
+      "link": "https://www.goodreads.com/review/show/8862032365?utm_medium=api&utm_source=rss",
+      "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1571272273l/52973614._SX318_SY475_.jpg",
+      "dateAdded": "2026-08-15T18:16:09.000Z"
+    },
+    {
+      "title": "World War One: A Short History by Stone, Norman (2008)",
+      "author": "Unknown Author",
+      "link": "https://www.goodreads.com/review/show/8862032297?utm_medium=api&utm_source=rss",
+      "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1699052989l/125180131._SY475_.jpg",
+      "dateAdded": "2026-08-15T18:16:07.000Z"
+    },
+    {
+      "title": "Bismarck and the German Empire",
+      "author": "Erich Eyck",
+      "link": "https://www.goodreads.com/review/show/8862032226?utm_medium=api&utm_source=rss",
+      "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388300452l/383641.jpg",
+      "dateAdded": "2026-08-15T18:16:05.000Z"
+    },
+    {
+      "title": "100 Decisive Battles from Ancient Times to the Present",
+      "author": "Paul K. Davis",
+      "link": "https://www.goodreads.com/review/show/8862032150?utm_medium=api&utm_source=rss",
+      "coverUrl": "https://s.gr-assets.com/assets/nophoto/book/111x148-675b3b2743c83e96e2540d2929d5f4d2.png",
+      "dateAdded": "2026-08-15T18:16:03.000Z"
+    }
+  ]
+}
