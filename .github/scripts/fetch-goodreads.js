@@ -5,9 +5,11 @@ const path = require('path');
 
 // Goodreads user ID for vittoriobisin (resolved from https://www.goodreads.com/vittoriobisin)
 const GOODREADS_USER_ID = '203522287';
+// Dedicated feed for whatever is on the "currently-reading" shelf.
+const CURRENTLY_READING_URL = `https://www.goodreads.com/review/list_rss/${GOODREADS_USER_ID}?shelf=currently-reading`;
 // #ALL# is Goodreads' special shelf value that returns books across every shelf
 // (read, currently-reading, to-read, and any custom shelves), not just one.
-const GOODREADS_RSS_URL = `https://www.goodreads.com/review/list_rss/${GOODREADS_USER_ID}?shelf=%23ALL%23`;
+const ALL_SHELVES_URL = `https://www.goodreads.com/review/list_rss/${GOODREADS_USER_ID}?shelf=%23ALL%23`;
 
 // Ensure data directory exists
 const dataDir = path.join(process.cwd(), 'data');
@@ -16,108 +18,114 @@ if (!fs.existsSync(dataDir)) {
   console.log(`Created data directory at ${dataDir}`);
 }
 
-// Function to fetch Goodreads RSS feed
-async function fetchGoodreadsData() {
+// Fetch a Goodreads shelf RSS feed and return its raw <item> entries.
+async function fetchShelfItems(url) {
+  const response = await axios.get(url, {
+    headers: {
+      'User-Agent': 'Mozilla/5.0 (compatible; GitHubAction/1.0)'
+    },
+    timeout: 30000 // 30 seconds timeout
+  });
+
+  const parser = new xml2js.Parser({ explicitArray: false });
+  const result = await parser.parseStringPromise(response.data);
+
+  if (!result.rss || !result.rss.channel || !result.rss.channel.item) {
+    return [];
+  }
+
+  return Array.isArray(result.rss.channel.item)
+    ? result.rss.channel.item
+    : [result.rss.channel.item];
+}
+
+// Normalize one raw RSS <item> into the shape the page expects.
+function parseBook(item) {
   try {
-    console.log('Starting Goodreads data fetch process...');
-    console.log(`Fetching from RSS URL: ${GOODREADS_RSS_URL}`);
+    const title = (item.title || '').toString().trim();
 
-    // Fetch RSS feed
-    const response = await axios.get(GOODREADS_RSS_URL, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (compatible; GitHubAction/1.0)'
-      },
-      timeout: 30000 // 30 seconds timeout
-    });
+    // author_name is usually a plain string, but xml2js can wrap it in
+    // an object if the tag ever carries attributes - handle both.
+    let author = item.author_name || '';
+    if (author && typeof author === 'object') {
+      author = author._ || author['#text'] || '';
+    }
+    author = author.toString().trim();
 
-    console.log('RSS feed fetched successfully. Response status:', response.status);
+    // Prefer the largest cover image Goodreads provides, falling back
+    // through smaller sizes, and finally scraping the <description>
+    // HTML blob (same fallback pattern used for Letterboxd posters).
+    let coverUrl =
+      item.book_large_image_url ||
+      item.book_medium_image_url ||
+      item.book_image_url ||
+      item.book_small_image_url ||
+      '';
 
-    // Parse XML to JSON
-    console.log('Parsing XML to JSON...');
-    const parser = new xml2js.Parser({ explicitArray: false });
-    const result = await parser.parseStringPromise(response.data);
-
-    console.log('XML parsing completed. Checking for channel items...');
-
-    // Check if there are items
-    if (!result.rss || !result.rss.channel || !result.rss.channel.item) {
-      console.log('No items found in RSS feed.');
-      fs.writeFileSync(
-        path.join(dataDir, 'goodreads.json'),
-        JSON.stringify([], null, 2)
-      );
-      console.log('Saved empty array to goodreads.json');
-      return;
+    if (!coverUrl && item.description && typeof item.description === 'string') {
+      const imgMatch = item.description.match(/<img[^>]+src="([^"]+)"/);
+      if (imgMatch && imgMatch[1]) {
+        coverUrl = imgMatch[1];
+      }
     }
 
-    // Process and filter the data
-    const items = Array.isArray(result.rss.channel.item)
-      ? result.rss.channel.item
-      : [result.rss.channel.item];
+    // Kept only for sorting - not displayed on the page.
+    const dateAdded = item.user_date_added
+      ? new Date(item.user_date_added).toISOString()
+      : (item.pubDate ? new Date(item.pubDate).toISOString() : new Date().toISOString());
 
-    console.log(`Found ${items.length} items in RSS feed`);
+    return {
+      title,
+      author,
+      link: item.link || '',
+      coverUrl,
+      dateAdded
+    };
+  } catch (error) {
+    console.error('Error processing item:', error);
+    return null;
+  }
+}
 
-    const books = items
-      .map(item => {
-        try {
-          const title = (item.title || '').toString().trim();
+async function fetchGoodreadsData() {
+  const emptyResult = { currentlyReading: [], recentlyAdded: [] };
 
-          // author_name is usually a plain string, but xml2js can wrap it in
-          // an object if the tag ever carries attributes - handle both.
-          let author = item.author_name || '';
-          if (author && typeof author === 'object') {
-            author = author._ || author['#text'] || '';
-          }
-          author = author.toString().trim();
+  try {
+    console.log('Starting Goodreads data fetch process...');
 
-          // Prefer the largest cover image Goodreads provides, falling back
-          // through smaller sizes, and finally scraping the <description>
-          // HTML blob (same fallback pattern used for Letterboxd posters).
-          let coverUrl =
-            item.book_large_image_url ||
-            item.book_medium_image_url ||
-            item.book_image_url ||
-            item.book_small_image_url ||
-            '';
+    console.log(`Fetching currently-reading shelf: ${CURRENTLY_READING_URL}`);
+    const currentlyReadingItems = await fetchShelfItems(CURRENTLY_READING_URL);
+    console.log(`Found ${currentlyReadingItems.length} items on currently-reading shelf`);
 
-          if (!coverUrl && item.description && typeof item.description === 'string') {
-            const imgMatch = item.description.match(/<img[^>]+src="([^"]+)"/);
-            if (imgMatch && imgMatch[1]) {
-              coverUrl = imgMatch[1];
-            }
-          }
+    console.log(`Fetching all shelves: ${ALL_SHELVES_URL}`);
+    const allItems = await fetchShelfItems(ALL_SHELVES_URL);
+    console.log(`Found ${allItems.length} items across all shelves`);
 
-          // Kept only for sorting - not displayed on the page.
-          const dateAdded = item.user_date_added
-            ? new Date(item.user_date_added).toISOString()
-            : (item.pubDate ? new Date(item.pubDate).toISOString() : new Date().toISOString());
-
-          return {
-            title,
-            author,
-            link: item.link || '',
-            coverUrl,
-            dateAdded
-          };
-        } catch (error) {
-          console.error('Error processing item:', error);
-          return null;
-        }
-      })
-      .filter(item => item !== null && item.title)
-      // Most recently added/updated first
+    const currentlyReading = currentlyReadingItems
+      .map(parseBook)
+      .filter(book => book !== null && book.title)
       .sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded))
-      .slice(0, 12); // Limit to 12 most recent books
+      .slice(0, 12);
 
-    console.log(`Processed ${books.length} books`);
+    // Don't show a book in "Recently Added" if it's already shown in
+    // "Currently Reading".
+    const currentlyReadingLinks = new Set(currentlyReading.map(book => book.link));
 
-    // Save processed data to JSON file
+    const recentlyAdded = allItems
+      .map(parseBook)
+      .filter(book => book !== null && book.title)
+      .filter(book => !currentlyReadingLinks.has(book.link))
+      .sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded))
+      .slice(0, 12);
+
+    const data = { currentlyReading, recentlyAdded };
+
     fs.writeFileSync(
       path.join(dataDir, 'goodreads.json'),
-      JSON.stringify(books, null, 2)
+      JSON.stringify(data, null, 2)
     );
 
-    console.log(`Successfully fetched and saved ${books.length} books`);
+    console.log(`Successfully saved ${currentlyReading.length} currently-reading and ${recentlyAdded.length} recently-added books`);
   } catch (error) {
     console.error('Error fetching Goodreads data:');
     console.error(error);
@@ -127,13 +135,13 @@ async function fetchGoodreadsData() {
       fs.mkdirSync(dataDir, { recursive: true });
     }
 
-    // Save empty array
+    // Save empty result so the page degrades gracefully
     fs.writeFileSync(
       path.join(dataDir, 'goodreads.json'),
-      JSON.stringify([], null, 2)
+      JSON.stringify(emptyResult, null, 2)
     );
 
-    console.error('Saved empty array to goodreads.json due to error');
+    console.error('Saved empty data to goodreads.json due to error');
     process.exit(1);
   }
 }
