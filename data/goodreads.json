@@ -17,6 +17,13 @@
   ],
   "recentlyAdded": [
     {
+      "title": "Leonardo Del Vecchio",
+      "author": "Tommaso Ebhardt",
+      "link": "https://www.goodreads.com/review/show/8863204018?utm_medium=api&utm_source=rss",
+      "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1653063659l/61135322._SX318_.jpg",
+      "dateAdded": "2026-08-16T02:49:55.000Z"
+    },
+    {
       "title": "The Grapes of Wrath",
       "author": "John Steinbeck",
       "link": "https://www.goodreads.com/review/show/8863070196?utm_medium=api&utm_source=rss",
@@ -92,13 +99,6 @@
       "link": "https://www.goodreads.com/review/show/8862678658?utm_medium=api&utm_source=rss",
       "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347696322l/629429.jpg",
       "dateAdded": "2026-08-15T22:46:10.000Z"
-    },
-    {
-      "title": "The Good Soldier Švejk",
-      "author": "Jaroslav Hašek",
-      "link": "https://www.goodreads.com/review/show/8862675067?utm_medium=api&utm_source=rss",
-      "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1624922804l/7629._SY475_.jpg",
-      "dateAdded": "2026-08-15T22:44:28.000Z"
     }
   ]
 }
