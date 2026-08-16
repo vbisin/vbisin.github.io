@@ -120,7 +120,7 @@ async function fetchGoodreadsData() {
       .map(parseBook)
       .filter(book => book !== null && book.title)
       .sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded))
-      .slice(0, 12);
+      .slice(0, 10);
 
     // Don't show a book in "Want to Read" or "Recently Read" if it's already
     // shown in "Currently Reading" (shouldn't normally overlap, but kept as
@@ -133,7 +133,7 @@ async function fetchGoodreadsData() {
       .filter(book => book !== null && book.title)
       .filter(book => !currentlyReadingLinks.has(book.link))
       .sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded))
-      .slice(0, 12);
+      .slice(0, 10);
 
     // Sort by the date the book was actually marked read, falling back to
     // date added for books that were shelved as "read" without a read date.
@@ -142,7 +142,7 @@ async function fetchGoodreadsData() {
       .filter(book => book !== null && book.title)
       .filter(book => !currentlyReadingLinks.has(book.link))
       .sort((a, b) => new Date(b.dateRead || b.dateAdded) - new Date(a.dateRead || a.dateAdded))
-      .slice(0, 12);
+      .slice(0, 10);
 
     const data = { currentlyReading, wantToRead, recentlyRead };
 
