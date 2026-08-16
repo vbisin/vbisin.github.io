@@ -262,13 +262,13 @@
                 .then(data => {
                     console.log('Reading data loaded:', data);
                     const currentlyReading = (data && data.currentlyReading) || [];
-                    const recentlyAdded = (data && data.recentlyAdded) || [];
+                    const recentlyRead = (data && data.recentlyRead) || [];
 
-                    if (currentlyReading.length === 0 && recentlyAdded.length === 0) {
+                    if (currentlyReading.length === 0 && recentlyRead.length === 0) {
                         throw new Error('No books found in the JSON file');
                     }
 
-                    displayBooks(currentlyReading, recentlyAdded);
+                    displayBooks(currentlyReading, recentlyRead);
                 })
                 .catch(error => {
                     console.error('Error loading book data:', error);
@@ -295,7 +295,7 @@
             `;
         }
 
-        function displayBooks(currentlyReading, recentlyAdded) {
+        function displayBooks(currentlyReading, recentlyRead) {
             const contentEl = document.getElementById('reading-content');
             let html = '';
 
@@ -304,9 +304,9 @@
                 html += '<div class="books-grid">' + currentlyReading.map(bookCardHtml).join('') + '</div>';
             }
 
-            if (recentlyAdded.length > 0) {
+            if (recentlyRead.length > 0) {
                 html += '<h2>Recently Read</h2>';
-                html += '<div class="books-grid">' + recentlyAdded.map(bookCardHtml).join('') + '</div>';
+                html += '<div class="books-grid">' + recentlyRead.map(bookCardHtml).join('') + '</div>';
             }
 
             if (!html) {
