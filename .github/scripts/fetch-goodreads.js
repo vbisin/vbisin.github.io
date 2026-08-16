@@ -9,6 +9,8 @@ const GOODREADS_USER_ID = '203522287';
 const CURRENTLY_READING_URL = `https://www.goodreads.com/review/list_rss/${GOODREADS_USER_ID}?shelf=currently-reading`;
 // Dedicated feed for the "read" shelf only - excludes to-read/currently-reading.
 const READ_SHELF_URL = `https://www.goodreads.com/review/list_rss/${GOODREADS_USER_ID}?shelf=read`;
+// Dedicated feed for the "to-read" shelf - powers the "Want to Read" section.
+const WANT_TO_READ_URL = `https://www.goodreads.com/review/list_rss/${GOODREADS_USER_ID}?shelf=to-read`;
 
 // Ensure data directory exists
 const dataDir = path.join(process.cwd(), 'data');
@@ -97,7 +99,7 @@ function parseBook(item) {
 }
 
 async function fetchGoodreadsData() {
-  const emptyResult = { currentlyReading: [], recentlyRead: [] };
+  const emptyResult = { currentlyReading: [], wantToRead: [], recentlyRead: [] };
 
   try {
     console.log('Starting Goodreads data fetch process...');
@@ -105,6 +107,10 @@ async function fetchGoodreadsData() {
     console.log(`Fetching currently-reading shelf: ${CURRENTLY_READING_URL}`);
     const currentlyReadingItems = await fetchShelfItems(CURRENTLY_READING_URL);
     console.log(`Found ${currentlyReadingItems.length} items on currently-reading shelf`);
+
+    console.log(`Fetching to-read shelf: ${WANT_TO_READ_URL}`);
+    const toReadItems = await fetchShelfItems(WANT_TO_READ_URL);
+    console.log(`Found ${toReadItems.length} items on to-read shelf`);
 
     console.log(`Fetching read shelf: ${READ_SHELF_URL}`);
     const readItems = await fetchShelfItems(READ_SHELF_URL);
@@ -116,9 +122,18 @@ async function fetchGoodreadsData() {
       .sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded))
       .slice(0, 12);
 
-    // Don't show a book in "Recently Read" if it's already shown in
-    // "Currently Reading" (shouldn't normally overlap, but kept as a safety net).
+    // Don't show a book in "Want to Read" or "Recently Read" if it's already
+    // shown in "Currently Reading" (shouldn't normally overlap, but kept as
+    // a safety net for books shelved under more than one status).
     const currentlyReadingLinks = new Set(currentlyReading.map(book => book.link));
+
+    // Sort by when the book was added to the to-read shelf, most recent first.
+    const wantToRead = toReadItems
+      .map(parseBook)
+      .filter(book => book !== null && book.title)
+      .filter(book => !currentlyReadingLinks.has(book.link))
+      .sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded))
+      .slice(0, 12);
 
     // Sort by the date the book was actually marked read, falling back to
     // date added for books that were shelved as "read" without a read date.
@@ -129,14 +144,14 @@ async function fetchGoodreadsData() {
       .sort((a, b) => new Date(b.dateRead || b.dateAdded) - new Date(a.dateRead || a.dateAdded))
       .slice(0, 12);
 
-    const data = { currentlyReading, recentlyRead };
+    const data = { currentlyReading, wantToRead, recentlyRead };
 
     fs.writeFileSync(
       path.join(dataDir, 'goodreads.json'),
       JSON.stringify(data, null, 2)
     );
 
-    console.log(`Successfully saved ${currentlyReading.length} currently-reading and ${recentlyRead.length} recently-read books`);
+    console.log(`Successfully saved ${currentlyReading.length} currently-reading, ${wantToRead.length} want-to-read, and ${recentlyRead.length} recently-read books`);
   } catch (error) {
     console.error('Error fetching Goodreads data:');
     console.error(error);
