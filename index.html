@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+        (function () {
+            var stored = localStorage.getItem('theme');
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (stored === 'dark' || (!stored && prefersDark)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vittorio Bisin - Systematic Macro Portfolio Manager</title>
@@ -237,9 +246,122 @@
         .contents-box a:hover {
             color: #000000;
         }
+        body {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(0,0,0,0.08);
+            background-color: rgba(255,255,255,0.7);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            padding: 0;
+        }
+        .theme-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+        .theme-toggle svg {
+            width: 18px;
+            height: 18px;
+            position: absolute;
+            transition: opacity 0.25s ease, transform 0.4s ease;
+        }
+        .theme-toggle .icon-sun {
+            color: #f5a623;
+            opacity: 0;
+            transform: rotate(-90deg) scale(0.6);
+        }
+        .theme-toggle .icon-moon {
+            color: #55556b;
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
+        }
+        html[data-theme="dark"] .theme-toggle {
+            background-color: rgba(255,255,255,0.08);
+            border-color: rgba(255,255,255,0.16);
+        }
+        html[data-theme="dark"] .theme-toggle .icon-sun {
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
+            color: #f5c451;
+        }
+        html[data-theme="dark"] .theme-toggle .icon-moon {
+            opacity: 0;
+            transform: rotate(90deg) scale(0.6);
+        }
+        html[data-theme="dark"] body {
+            background-color: #15131c;
+            color: #eae7f2;
+        }
+        html[data-theme="dark"] h1 {
+            color: #eae7f2;
+        }
+        html[data-theme="dark"] .tagline {
+            color: #b9b4c9;
+        }
+        html[data-theme="dark"] .nav-link {
+            color: #cfcbdb;
+        }
+        html[data-theme="dark"] .nav-link:hover {
+            background-color: rgba(255,255,255,0.08);
+            color: #eae7f2;
+        }
+        html[data-theme="dark"] .nav-link.top-right {
+            background-color: rgba(255,255,255,0.06);
+            color: #eae7f2;
+        }
+        html[data-theme="dark"] .nav-link.top-right:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: #ffffff;
+        }
+        html[data-theme="dark"] .contact-text {
+            color: #b9b4c9;
+        }
+        html[data-theme="dark"] .social-icon-blue {
+            fill: #7fa8ff;
+            color: #7fa8ff;
+            stroke: #7fa8ff;
+        }
+        html[data-theme="dark"] .contents-box {
+            background-color: #1c1a24;
+        }
+        html[data-theme="dark"] .contents-box h3 {
+            color: #eae7f2;
+        }
+        html[data-theme="dark"] .contents-box a {
+            color: #d8d4e8;
+        }
+        html[data-theme="dark"] .contents-box a:hover {
+            color: #ffffff;
+        }
+        html[data-theme="dark"] .profile-img {
+            border-color: #2a2733;
+        }
     </style>
 </head>
 <body>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+    </button>
     <div class="container">
         <img src="vittorio_big_sur.jpg" alt="Vittorio Bisin" class="profile-img">
         <h1>Vittorio Bisin</h1>
@@ -285,13 +407,30 @@
     <div class="contents-box">
         <h3>Contents</h3>
         <ul>
-            <li><a href="about.html">- about</a></li>
-            <li><a href="films.html">- film</a></li>
-            <li><a href="reading.html">- reading</a></li>
-            <li><a href="playlists.html">- music</a></li>
-            <li><a href="travel.html">- travel</a></li>
-            <li><a href="juventus.html">- juventus</a></li>
+            <li><a href="about">- about</a></li>
+            <li><a href="films">- film</a></li>
+            <li><a href="reading">- reading</a></li>
+            <li><a href="playlists">- music</a></li>
+            <li><a href="travel">- travel</a></li>
+            <li><a href="juventus">- juventus</a></li>
         </ul>
     </div>
+
+    <script>
+        (function () {
+            var toggle = document.getElementById('theme-toggle');
+            if (!toggle) return;
+            toggle.addEventListener('click', function () {
+                var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                if (isDark) {
+                    document.documentElement.removeAttribute('data-theme');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
+        })();
+    </script>
 </body>
 </html>
