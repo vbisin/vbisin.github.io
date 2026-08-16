@@ -4,6 +4,12 @@ on:
     - cron: '30 */12 * * *'  # Run every 12 hours (offset from the Letterboxd fetch)
   workflow_dispatch:  # Allow manual triggers
 
+# Never let two runs of this workflow race each other for the push. Queue
+# instead of canceling so a manual dispatch doesn't get dropped.
+concurrency:
+  group: fetch-goodreads
+  cancel-in-progress: false
+
 jobs:
   fetch-goodreads:
     runs-on: ubuntu-latest
@@ -46,13 +52,24 @@ jobs:
 
           git commit -m "Update Goodreads data"
 
-          # main can move between checkout and push (another workflow or a
-          # manual push landing at the same time) - rebase onto the latest
-          # main and retry a few times instead of failing on the first race.
+          # main can still move between checkout and push (e.g. a manual
+          # commit landing at the same time as this run). data/goodreads.json
+          # is fully regenerated every run and has no meaningful history to
+          # preserve, so on conflict always keep our freshly-fetched version
+          # rather than trying to reconcile the two. Merge (not rebase) so a
+          # conflict leaves a clean, abortable state instead of a stuck
+          # rebase that every retry re-fails on.
           for i in 1 2 3 4 5; do
-            if git pull --rebase origin main && git push; then
-              exit 0
+            git fetch origin main
+
+            if git merge -X ours --no-edit origin/main; then
+              if git push origin HEAD:main; then
+                exit 0
+              fi
+            else
+              git merge --abort
             fi
+
             echo "Push attempt $i failed, retrying in 5s..."
             sleep 5
           done
