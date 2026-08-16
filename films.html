@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+        (function () {
+            var stored = localStorage.getItem('theme');
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (stored === 'dark' || (!stored && prefersDark)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Films - Vittorio Bisin</title>
     <meta name="description" content="Vittorio Bisin's film reviews and ratings. Follow his movie watching journey on Letterboxd with recently watched films and ratings.">
-    <link rel="canonical" href="https://www.vittoriobisin.com/films.html">
+    <link rel="canonical" href="https://www.vittoriobisin.com/films">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <style>
         body {
@@ -208,10 +217,118 @@
                 font-size: 0.8em;
             }
         }
+        body {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(0,0,0,0.08);
+            background-color: rgba(255,255,255,0.7);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            padding: 0;
+        }
+        .theme-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+        .theme-toggle svg {
+            width: 18px;
+            height: 18px;
+            position: absolute;
+            transition: opacity 0.25s ease, transform 0.4s ease;
+        }
+        .theme-toggle .icon-sun {
+            color: #f5a623;
+            opacity: 0;
+            transform: rotate(-90deg) scale(0.6);
+        }
+        .theme-toggle .icon-moon {
+            color: #55556b;
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
+        }
+        html[data-theme="dark"] .theme-toggle {
+            background-color: rgba(255,255,255,0.08);
+            border-color: rgba(255,255,255,0.16);
+        }
+        html[data-theme="dark"] .theme-toggle .icon-sun {
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
+            color: #f5c451;
+        }
+        html[data-theme="dark"] .theme-toggle .icon-moon {
+            opacity: 0;
+            transform: rotate(90deg) scale(0.6);
+        }
+        html[data-theme="dark"] body {
+            background-color: #15131c;
+            color: #eae7f2;
+        }
+        html[data-theme="dark"] h1,
+        html[data-theme="dark"] h2 {
+            color: #eae7f2;
+        }
+        html[data-theme="dark"] p {
+            color: #b9b4c9;
+        }
+        html[data-theme="dark"] .nav-link {
+            background-color: #211f29;
+            color: #cfcbdb;
+        }
+        html[data-theme="dark"] .nav-link:hover {
+            box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+        }
+        html[data-theme="dark"] .letterboxd-card {
+            background-color: #211f29;
+            border-color: #34303f;
+        }
+        html[data-theme="dark"] .letterboxd-username {
+            color: #eae7f2;
+        }
+        html[data-theme="dark"] .letterboxd-stats {
+            color: #a8a3ba;
+        }
+        html[data-theme="dark"] .film-card {
+            background-color: #211f29;
+        }
+        html[data-theme="dark"] .film-title {
+            color: #eae7f2;
+        }
+        html[data-theme="dark"] .film-date {
+            color: #a8a3ba;
+        }
+        html[data-theme="dark"] .loading {
+            color: #a8a3ba;
+        }
+        html[data-theme="dark"] .last-updated {
+            color: #8f8aa3;
+        }
     </style>
 </head>
 <body>
-    <a href="index.html" class="nav-link">← Home</a>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+    </button>
+    <a href="/" class="nav-link">← Home</a>
     
     <div class="container">
         <h1>Films</h1>
@@ -337,6 +454,23 @@
                 filmsContainer.appendChild(filmCard);
             });
         }
+    </script>
+
+    <script>
+        (function () {
+            var toggle = document.getElementById('theme-toggle');
+            if (!toggle) return;
+            toggle.addEventListener('click', function () {
+                var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                if (isDark) {
+                    document.documentElement.removeAttribute('data-theme');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
+        })();
     </script>
 </body>
 </html>
