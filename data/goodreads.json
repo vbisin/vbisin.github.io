@@ -1,11 +1,11 @@
 {
   "currentlyReading": [
     {
-      "title": "Sergio Marchionne",
-      "author": "Tommaso Ebhardt",
-      "link": "https://www.goodreads.com/review/show/8862568624?utm_medium=api&utm_source=rss",
-      "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1556622993l/45415265._SX318_.jpg",
-      "dateAdded": "2026-08-15T21:57:52.000Z",
+      "title": "Superbonus: Come fallisce una nazione (Italian Edition)",
+      "author": "Luciano Capone",
+      "link": "https://www.goodreads.com/review/show/8905577358?utm_medium=api&utm_source=rss",
+      "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1732269200l/221813929._SY475_.jpg",
+      "dateAdded": "2026-08-31T03:43:37.000Z",
       "dateRead": null
     },
     {
@@ -101,6 +101,14 @@
   ],
   "recentlyRead": [
     {
+      "title": "Sergio Marchionne",
+      "author": "Tommaso Ebhardt",
+      "link": "https://www.goodreads.com/review/show/8862568624?utm_medium=api&utm_source=rss",
+      "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1556622993l/45415265._SX318_.jpg",
+      "dateAdded": "2026-08-31T03:43:19.000Z",
+      "dateRead": "2026-08-30T00:00:00.000Z"
+    },
+    {
       "title": "Min kamp 5 (Min kamp, #5)",
       "author": "Karl Ove Knausgård",
       "link": "https://www.goodreads.com/review/show/8864515104?utm_medium=api&utm_source=rss",
@@ -170,14 +178,6 @@
       "link": "https://www.goodreads.com/review/show/8864431168?utm_medium=api&utm_source=rss",
       "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1642707640l/266342.jpg",
       "dateAdded": "2026-08-16T15:24:22.000Z",
-      "dateRead": null
-    },
-    {
-      "title": "The Mirror Maker: Stories and Essays",
-      "author": "Primo Levi",
-      "link": "https://www.goodreads.com/review/show/8864420315?utm_medium=api&utm_source=rss",
-      "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1686902451l/136094.jpg",
-      "dateAdded": "2026-08-16T15:19:55.000Z",
       "dateRead": null
     }
   ]
