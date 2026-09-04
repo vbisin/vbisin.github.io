@@ -1,5 +1,12 @@
 [
   {
+    "title": "The Musical",
+    "link": "https://letterboxd.com/gianvittorio/film/the-musical-2026/",
+    "watchDate": "2026-09-03T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/4/5/1/8/8/0/1451880-the-musical-1-0-600-0-900-crop.jpg?v=511e79c70e",
+    "rating": 5
+  },
+  {
     "title": "Tony",
     "link": "https://letterboxd.com/gianvittorio/film/tony-2026/",
     "watchDate": "2026-08-15T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2026-05-24T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/1/7/2/7/8/7/1172787-a-house-of-dynamite-0-600-0-900-crop.jpg?v=9013364dac",
     "rating": 3.5
-  },
-  {
-    "title": "The Phoenician Scheme",
-    "link": "https://letterboxd.com/gianvittorio/film/the-phoenician-scheme/",
-    "watchDate": "2026-05-16T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/0/2/5/0/4/7/1025047-the-phoenician-scheme-0-600-0-900-crop.jpg?v=606059b69f",
-    "rating": 4
   }
 ]
