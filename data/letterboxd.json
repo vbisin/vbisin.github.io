@@ -1,5 +1,12 @@
 [
   {
+    "title": "The Musical",
+    "link": "https://letterboxd.com/gianvittorio/film/the-musical-2026/1/",
+    "watchDate": "2026-09-18T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/4/5/1/8/8/0/1451880-the-musical-2026-0-600-0-900-crop.jpg?v=3ec3c1ce36",
+    "rating": 5
+  },
+  {
     "title": "Turning Point: Generation 9/11",
     "link": "https://letterboxd.com/gianvittorio/film/turning-point-generation-9-11/",
     "watchDate": "2026-09-13T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2026-06-06T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/4/0/5/7/2/8/1405728-mexico-86-2026-0-600-0-900-crop.jpg?v=eb421d9372",
     "rating": 3.5
-  },
-  {
-    "title": "My Tennis Maestro",
-    "link": "https://letterboxd.com/gianvittorio/film/my-tennis-maestro/",
-    "watchDate": "2026-05-30T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/0/3/0/9/0/8/1030908-my-tennis-maestro-0-600-0-900-crop.jpg?v=ecdf0aa5e4",
-    "rating": 4
   }
 ]
