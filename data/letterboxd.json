@@ -1,5 +1,12 @@
 [
   {
+    "title": "The Drama",
+    "link": "https://letterboxd.com/gianvittorio/film/the-drama/",
+    "watchDate": "2026-10-09T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/2/0/5/4/9/4/1205494-the-drama-0-600-0-900-crop.jpg?v=2320acafd5",
+    "rating": 2
+  },
+  {
     "title": "Tutti gli uomini del deficiente",
     "link": "https://letterboxd.com/gianvittorio/film/tutti-gli-uomini-del-deficiente/",
     "watchDate": "2026-10-08T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2026-07-16T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/2/5/5/3/9/4/1255394-the-odyssey-2026-0-600-0-900-crop.jpg?v=1eed046d0c",
     "rating": 3.5
-  },
-  {
-    "title": "Senna",
-    "link": "https://letterboxd.com/gianvittorio/film/senna/",
-    "watchDate": "2026-07-05T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/sm/upload/8u/d6/31/8h/wnC4TllSy7SY16wzPH42mczz97w-0-600-0-900-crop.jpg?v=417366e017",
-    "rating": 4
   }
 ]
