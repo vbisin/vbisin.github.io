@@ -1,5 +1,12 @@
 [
   {
+    "title": "8 Mile",
+    "link": "https://letterboxd.com/gianvittorio/film/8-mile/",
+    "watchDate": "2026-10-24T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/sm/upload/sx/ew/do/rx/dXzTrKwpbLpCqn8O70FUUhNbYQT-0-600-0-900-crop.jpg?v=c5c2812b92",
+    "rating": 4.5
+  },
+  {
     "title": "The Alto Knights",
     "link": "https://letterboxd.com/gianvittorio/film/the-alto-knights/",
     "watchDate": "2026-10-19T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2026-08-07T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/9/1/9/2/3/8/919238-in-the-hand-of-dante-0-600-0-900-crop.jpg?v=13be79f68b",
     "rating": 2
-  },
-  {
-    "title": "The Odyssey",
-    "link": "https://letterboxd.com/gianvittorio/film/the-odyssey-2026/1/",
-    "watchDate": "2026-08-01T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/2/5/5/3/9/4/1255394-the-odyssey-2026-0-600-0-900-crop.jpg?v=1eed046d0c",
-    "rating": 4.5
   }
 ]
