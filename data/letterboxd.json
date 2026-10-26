@@ -1,5 +1,12 @@
 [
   {
+    "title": "Fatherland",
+    "link": "https://letterboxd.com/gianvittorio/film/fatherland-2026/",
+    "watchDate": "2026-10-25T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/3/1/5/3/1/8/1315318-fatherland-2026-0-600-0-900-crop.jpg?v=6995cce652",
+    "rating": 4.5
+  },
+  {
     "title": "8 Mile",
     "link": "https://letterboxd.com/gianvittorio/film/8-mile/",
     "watchDate": "2026-10-24T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2026-08-15T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/2/0/9/0/0/1/1209001-tony-2026-0-600-0-900-crop.jpg?v=63ce7b9234",
     "rating": 3.5
-  },
-  {
-    "title": "In the Hand of Dante",
-    "link": "https://letterboxd.com/gianvittorio/film/in-the-hand-of-dante/",
-    "watchDate": "2026-08-07T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/9/1/9/2/3/8/919238-in-the-hand-of-dante-0-600-0-900-crop.jpg?v=13be79f68b",
-    "rating": 2
   }
 ]
