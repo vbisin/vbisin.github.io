@@ -19,25 +19,46 @@ if (!fs.existsSync(dataDir)) {
   console.log(`Created data directory at ${dataDir}`);
 }
 
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
 // Fetch a Goodreads shelf RSS feed and return its raw <item> entries.
-async function fetchShelfItems(url) {
-  const response = await axios.get(url, {
-    headers: {
-      'User-Agent': 'Mozilla/5.0 (compatible; GitHubAction/1.0)'
-    },
-    timeout: 30000 // 30 seconds timeout
-  });
+// Goodreads intermittently answers GitHub's runners with 403/429/5xx or a
+// non-RSS HTML page, so retry a few times with backoff before giving up.
+async function fetchShelfItems(url, attempts = 4) {
+  let lastError;
+  for (let attempt = 1; attempt <= attempts; attempt++) {
+    try {
+      const response = await axios.get(url, {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36',
+          'Accept': 'application/rss+xml, application/xml;q=0.9, */*;q=0.8'
+        },
+        timeout: 30000 // 30 seconds timeout
+      });
 
-  const parser = new xml2js.Parser({ explicitArray: false });
-  const result = await parser.parseStringPromise(response.data);
+      const parser = new xml2js.Parser({ explicitArray: false });
+      const result = await parser.parseStringPromise(response.data);
 
-  if (!result.rss || !result.rss.channel || !result.rss.channel.item) {
-    return [];
+      if (!result.rss || !result.rss.channel) {
+        throw new Error('Response was not an RSS feed');
+      }
+      if (!result.rss.channel.item) {
+        return [];
+      }
+
+      return Array.isArray(result.rss.channel.item)
+        ? result.rss.channel.item
+        : [result.rss.channel.item];
+    } catch (error) {
+      lastError = error;
+      const status = error.response ? error.response.status : error.code || error.message;
+      console.warn(`Attempt ${attempt}/${attempts} for ${url} failed: ${status}`);
+      if (attempt < attempts) {
+        await sleep(attempt * 10000); // 10s, 20s, 30s
+      }
+    }
   }
-
-  return Array.isArray(result.rss.channel.item)
-    ? result.rss.channel.item
-    : [result.rss.channel.item];
+  throw lastError;
 }
 
 // Normalize one raw RSS <item> into the shape the page expects.
@@ -153,22 +174,18 @@ async function fetchGoodreadsData() {
 
     console.log(`Successfully saved ${currentlyReading.length} currently-reading, ${wantToRead.length} want-to-read, and ${recentlyRead.length} recently-read books`);
   } catch (error) {
-    console.error('Error fetching Goodreads data:');
-    console.error(error);
+    // Goodreads is unreachable or blocking us right now. Keep the last good
+    // data/goodreads.json untouched (so the site doesn't go blank) and finish
+    // cleanly with a warning, so a transient Goodreads outage doesn't show up
+    // as a failed run. The next scheduled run will try again.
+    const status = error.response ? `HTTP ${error.response.status}` : (error.code || error.message);
+    console.error('Error fetching Goodreads data:', error.message);
+    console.log(`::warning::Goodreads fetch failed (${status}); keeping existing data/goodreads.json`);
 
-    // Make sure data directory exists
-    if (!fs.existsSync(dataDir)) {
-      fs.mkdirSync(dataDir, { recursive: true });
+    const outFile = path.join(dataDir, 'goodreads.json');
+    if (!fs.existsSync(outFile)) {
+      fs.writeFileSync(outFile, JSON.stringify(emptyResult, null, 2));
     }
-
-    // Save empty result so the page degrades gracefully
-    fs.writeFileSync(
-      path.join(dataDir, 'goodreads.json'),
-      JSON.stringify(emptyResult, null, 2)
-    );
-
-    console.error('Saved empty data to goodreads.json due to error');
-    process.exit(1);
   }
 }
 
