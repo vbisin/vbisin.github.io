@@ -1,5 +1,12 @@
 [
   {
+    "title": "You Can See Everything",
+    "link": "https://letterboxd.com/gianvittorio/film/you-can-see-everything/",
+    "watchDate": "2026-10-28T00:00:00.000Z",
+    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/6/2/9/4/4/3/1629443-you-can-see-everything-0-600-0-900-crop.jpg?v=84f6724d74",
+    "rating": 2
+  },
+  {
     "title": "Fjord",
     "link": "https://letterboxd.com/gianvittorio/film/fjord-2026/",
     "watchDate": "2026-10-26T00:00:00.000Z",
@@ -75,12 +82,5 @@
     "watchDate": "2026-09-13T00:00:00.000Z",
     "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/6/1/7/4/2/6/1617426-turning-point-generation-9-11-0-600-0-900-crop.jpg?v=2729f64c43",
     "rating": 4
-  },
-  {
-    "title": "The Musical",
-    "link": "https://letterboxd.com/gianvittorio/film/the-musical-2026/",
-    "watchDate": "2026-09-03T00:00:00.000Z",
-    "posterUrl": "https://a.ltrbxd.com/resized/film-poster/1/4/5/1/8/8/0/1451880-the-musical-2026-0-600-0-900-crop.jpg?v=3ec3c1ce36",
-    "rating": 5
   }
 ]
